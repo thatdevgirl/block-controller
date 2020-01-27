@@ -1,0 +1,30 @@
+{
+  "name": "gutenberg-plugin-base",
+  "version": "1.0.0",
+  "description": "Build scripts for the PLUGIN plugin",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joni Halabi",
+  "license": "MIT",
+
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.3.0",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.3",
+    "gulp": "latest",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "jquery": "latest",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

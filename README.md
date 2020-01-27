@@ -1,1 +1,1 @@
-# wp-controller-plugin
+# GU Block Controller Plugin

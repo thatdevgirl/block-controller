@@ -7,7 +7,7 @@ const gulp       = require( 'gulp' ),
 
 // Array of JS files, in order by dependency.
 const jsFiles = [
-  'source/js/block/index.js'
+  'source/js/enable-blocks.js'
 ];
 
 // JS build task.
@@ -22,4 +22,4 @@ gulp.task( 'js', () => {
 } );
 
 // Default task.
-gulp.task( 'default', 'js' );
+gulp.task( 'default', gulp.series( 'js' ) );

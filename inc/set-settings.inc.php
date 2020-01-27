@@ -4,7 +4,6 @@
  */
 
 class GUBlockControllerSettings {
-
   /*
    * Initialize!
    */
@@ -39,8 +38,16 @@ class GUBlockControllerSettings {
    * Register all settings.
    */
   public function register_settings() {
-    register_setting( 'gu_block_group', 'test1' );
+    register_setting( 'gu_block_group', 'gu_enabled_blocks' );
   }
+
+  /*
+   * Private variables to categorize blocks.
+   */
+  private $blocks_core = array(
+    'core/list' => 'List',
+    'core/image' => 'Image'
+  );
 
 }
 

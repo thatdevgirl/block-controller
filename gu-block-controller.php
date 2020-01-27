@@ -7,5 +7,5 @@
  * Author: Georgetown University Web Services
 */
 
-//require_once( 'inc/set-assets.inc.php' );
-echo 'hello world';
+require_once( 'inc/set-settings.inc.php' );
+require_once( 'inc/set-assets.inc.php' );

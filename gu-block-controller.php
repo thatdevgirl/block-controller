@@ -7,4 +7,4 @@
  * Author: Georgetown University Web Services
 */
 
-require_once( 'inc/set-block-controller.inc.php' );
+require_once( 'inc/set-controller.inc.php' );

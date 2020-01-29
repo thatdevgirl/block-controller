@@ -1,3 +1,8 @@
+/**
+ * ThreePM Block Controller build scripts.
+ */
+
+// Declare gulp libraries.
 const gulp       = require( 'gulp' ),
       babel      = require( 'gulp-babel' )
       browserify = require( 'browserify' ),
@@ -10,42 +15,48 @@ const gulp       = require( 'gulp' ),
 
 // JS editor build task.
 gulp.task( 'js-editor', () => {
-  return browserify( { entries: [ 'source/js/disable-blocks.js' ] } )
+  return browserify( { entries: [ 'threepm-block-controller/source/js/disable-blocks.js' ] } )
     .transform( 'babelify', { presets: [ 'es2015', 'react' ] } )
     .bundle()
     .pipe( source( 'block-controller-editor.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
-    .pipe( gulp.dest( 'build' ) );
+    .pipe( gulp.dest( 'threepm-block-controller/build' ) );
 } );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress
 // JS admin build task.
 gulp.task( 'js-admin', () => {
-  return browserify( { entries: [ 'source/js/settings-page.js' ] } )
+  return browserify( { entries: [ 'threepm-block-controller/source/js/settings-page.js' ] } )
     .transform( 'babelify', { presets: [ 'es2015' ] } )
     .bundle()
     .pipe( source( 'block-controller-admin.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
-    .pipe( gulp.dest( 'build' ) );
+    .pipe( gulp.dest( 'threepm-block-controller/build' ) );
 } );
 
 =======
 >>>>>>> c4a1636... Adding CSS for settings
 // CSS build task.
 gulp.task( 'css', () => {
-  return gulp.src( 'source/scss/block-controller.scss' )
+  return gulp.src( 'threepm-block-controller/source/scss/block-controller.scss' )
     .pipe( sass().on( 'error', sass.logError ) )
     .pipe( clean() )
     .pipe( rename( { suffix: '.min' } ) )
-    .pipe( gulp.dest( 'build' ) );
+    .pipe( gulp.dest( 'threepm-block-controller/build' ) );
 } );
 
-
 // Default task.
+<<<<<<< HEAD
 <<<<<<< HEAD
 gulp.task( 'default', gulp.series( 'js-editor', 'js-admin', 'css' ) );
 =======
 gulp.task( 'default', gulp.series( 'js', 'css' ) );
 >>>>>>> c4a1636... Adding CSS for settings
+=======
+gulp.task( 'default', gulp.series( 'js-editor', 'js-admin', 'css' ) );
+>>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress

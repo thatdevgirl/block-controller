@@ -1,0 +1,25 @@
+/**
+ * Settings buttons.
+ */
+
+// Submit.
+#block-controller-settings {
+  input[type='submit'] {
+    background-color: $blue;
+    border-color: $blue;
+  }
+}
+
+// Toggle all.
+.block-controller-package {
+  .toggle-all {
+    background-color: $blue;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

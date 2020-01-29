@@ -1,0 +1,154 @@
+<<<<<<< HEAD
+/* ***
+ * GU Block Controller settings page styles.
+ */
+
+$black: #000;
+<<<<<<< HEAD
+<<<<<<< HEAD
+$white: #fff;
+$red: #900;
+
+/* ***
+ * Instructions block.
+=======
+/**
+ * Styles for the Block Controller settings page.
+>>>>>>> 1748150... Refactoring scss; design updates to settings page; removing merge conflict files
+ */
+
+@import 'global/colors';
+
+@import 'components/buttons';
+@import 'components/checkboxes';
+@import 'components/package';
+<<<<<<< HEAD
+
+
+/* ***
+ * The settings form.
+ */
+<<<<<<< HEAD
+=======
+$white: #fff;
+>>>>>>> 3ef2e05... Fixing select all
+
+#block-controller-settings {
+  margin: 1rem 0;
+=======
+=======
+>>>>>>> 8f5c295... Making used blocks required to be enabled
+
+#gu-block-controller-settings {
+<<<<<<< HEAD
+  margin: 1rem;
+>>>>>>> c4a1636... Adding CSS for settings
+=======
+  margin: 1rem 0;
+>>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress
+
+<<<<<<< HEAD
+  fieldset {
+    margin-bottom: 2rem;
+  }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  // Select all button for an entire package.
+  .select-all {
+    min-height: unset;
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+
+  // Top level package label.
+  legend {
+    float: left;
+=======
+  legend {
+>>>>>>> c4a1636... Adding CSS for settings
+=======
+  // Select all checkbox for an entire package.
+=======
+  // Select all button for an entire package.
+>>>>>>> 3ef2e05... Fixing select all
+  .select-all {
+    min-height: unset;
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+
+  // Top level package label.
+  legend {
+    float: left;
+>>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress
+    margin-bottom: 1rem;
+    color: $black;
+    font-size: 1.25rem;
+  }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+  // Label for an individual block.
+  label {
+    display: block;
+    clear: both;
+    margin-bottom: 0.25rem;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
+
+  // Counter text for blocks that exist at least once on the site.
+  .count {
+    display: inline-block;
+    margin-left: 0.25rem;
+    color: $red;
+    font-size: 0.75rem;
+  }
+
+  // Check mark for required-enabled blocks.
+  .check {
+    font-weight: bold;
+=======
+=======
+  // Label for an individual block.
+>>>>>>> 8f5c295... Making used blocks required to be enabled
+  label {
+    display: block;
+    clear: both;
+    margin-bottom: 0.25rem;
+<<<<<<< HEAD
+>>>>>>> c4a1636... Adding CSS for settings
+=======
+    margin-left: 1rem;
+<<<<<<< HEAD
+>>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress
+=======
+    font-size: 0.9rem;
+  }
+=======
+
+  
+>>>>>>> 1748150... Refactoring scss; design updates to settings page; removing merge conflict files
+
+  // Counter text for blocks that exist at least once on the site.
+  .count {
+    display: inline-block;
+    margin-left: 0.25rem;
+    color: $red;
+    font-size: 0.75rem;
+  }
+
+  // Check mark for required-enabled blocks.
+  .check {
+    font-weight: bold;
+>>>>>>> 8f5c295... Making used blocks required to be enabled
+  }
+}
+=======
+>>>>>>> fd47b39... More scss moving

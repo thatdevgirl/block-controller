@@ -1,13 +1,10 @@
 {
-  "name": "gutenberg-plugin-base",
-  "version": "1.0.0",
-  "description": "Build scripts for the PLUGIN plugin",
+  "name": "threepm-block-controller",
+  "version": "1.0.1",
+  "description": "ThreePM Block Controller build scripts",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "repository": "github:thatdevgirl/block-controller.git",
   "author": "Joni Halabi",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
@@ -25,5 +22,8 @@
     "jquery": "latest",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

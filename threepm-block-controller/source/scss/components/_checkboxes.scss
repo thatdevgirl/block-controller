@@ -1,0 +1,66 @@
+/**
+ * Styles for the checkboxes on the settings page.
+ */
+
+.block-controller-package {
+
+  /*
+   * Mixin for all checkboxes, regardless of state.
+   */
+
+  @mixin base_checkbox {
+    border: 0;
+    border-radius: 0;
+    color: $white;
+    height: 2rem;
+    width: 4rem;
+
+    &:before {
+      content: '';
+    }
+
+    &:after {
+      display: block;
+      font-size: 0.8rem;
+      padding: 1rem;
+    }
+  }
+
+  /*
+   * The actual checkboxes.
+   */
+
+  input[type='checkbox'] {
+    @include base_checkbox;
+
+    // If a checkbox is not checked, then that block is enabled.
+    &:not( :checked ) {
+      background-color: $green;
+
+      &::after {
+        content: 'On';
+      }
+    }
+
+    // If a checkbox is checked, then that block is disabled.
+    &:checked {
+      background-color: $red;
+
+      &::after {
+        content: 'Off';
+      }
+    }
+  }
+
+  .required {
+    @include base_checkbox;
+    background-color: $gray;
+    color: $black;
+    display: inline-block;
+    font-size: 0.8rem;
+    height: 1.6rem;
+    margin-right: 0.2rem;
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+}

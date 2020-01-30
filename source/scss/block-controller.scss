@@ -3,6 +3,7 @@
  */
 
 $black: #000;
+$white: #fff;
 
 #gu-block-controller-settings {
   margin: 1rem 0;
@@ -11,11 +12,15 @@ $black: #000;
     margin-bottom: 2rem;
   }
 
-  // Select all checkbox for an entire package.
+  // Select all button for an entire package.
   .select-all {
-    position: relative;
-    top: 0.25rem;
     float: left;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: lighten( $black, 40% );
+    color: $white;
+    font-size: 0.75rem;
   }
 
   legend {

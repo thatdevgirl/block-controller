@@ -16,8 +16,8 @@
     <?php // Iterate over each PACKAGE. ?>
     <?php foreach( $this->packages as $label => $package ): ?>
       <fieldset>
-        <input type="checkbox" class="select-all" aria-label="Select all <?php print $label; ?> blocks">
         <legend><?php print $label; ?></legend>
+        <button class="select-all" aria-label="Select all <?php print $label; ?> blocks">Toggle all</button>
 
         <?php // Iterate over each BLOCK in the current package. ?>
         <?php foreach( $package as $key => $label ): ?>
@@ -26,7 +26,7 @@
 
           <?php // Add the checkbox for this item. ?>
           <label>
-            <input type="checkbox" name="gu_enabled_blocks[]" value="<?php print $key; ?>" <?php print $is_checked; ?> disabled>
+            <input type="checkbox" name="gu_enabled_blocks[]" value="<?php print $key; ?>" <?php print $is_checked; ?>>
             <?php print $label; ?>
           </label>
         <?php endforeach; ?>

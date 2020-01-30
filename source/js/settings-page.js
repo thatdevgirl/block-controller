@@ -1,30 +1,42 @@
 /**
- * DOM manipulation for the settings page for this plugi.
+ * Event handling for this plugin's settings page.
  */
 
 const $ = jQuery;
 
 const guBlockControllerSettings = {
+
   go: function() {
-    $( '.select-all' ).click( ( e ) => {
-      // Save whether the select all checkbox is checked or not.
-      const isChecked = $( e.target ).attr( 'checked' );
+    // Defined the form object.
+    this.form = $( '#gu-block-controller-settings' );
 
-      // Get the checkbox's parent. We'll need it later.
-      const parent = $( e.target ).closest( 'fieldset' );
+    // Define this plugin's events.
+    $( '.select-all', this.form ).click( this.selectAll );
+  },
 
-      // TODO: The checking of a disabled checkbox is not saving. Figure this out!!
+  /*
+   * EVENT HANDLER: Select all blocks in a given package.
+   */
 
-      // If the checkbox is checked, check all of the checkboxes underneath.
-      if ( isChecked == 'checked' ) {
-        $( 'input', parent ).attr( 'checked', 'checked' );
-      }
-      // Otherwise, uncheck all of the checkboxes underneath.
-      else {
-        $( 'input', parent ).removeAttr( 'checked' );
-      }
-    } );
+  selectAll: function( e ) {
+    e.preventDefault();
+
+    // Get this select all button's parent container.
+    const parent = $( e.target ).closest( 'fieldset' );
+
+    // Find any checked items in this package.
+    const checkedItems = $( 'input', parent ).attr( 'checked' );
+
+    // If any of the blocks in this package are checked, uncheck all of them.
+    // Otherwise, check all of them.
+    // There is probably a more logical UX-ish way to do this, but this works for now.
+    if ( checkedItems ) {
+      $( 'input', parent ).removeAttr( 'checked' );
+    } else {
+      $( 'input', parent ).attr( 'checked', 'checked' );
+    }
   }
-}
+
+};
 
 guBlockControllerSettings.go();

@@ -14,20 +14,21 @@
     ?>
 
     <?php // Iterate over each PACKAGE. ?>
-    <?php foreach( $this->packages as $label => $package ): ?>
+    <?php foreach( $this->packages as $package_label => $blocks ): ?>
       <fieldset>
-        <legend><?php print $label; ?></legend>
-        <button class="select-all" aria-label="Select all <?php print $label; ?> blocks">Toggle all</button>
+        <legend><?php print $package_label; ?></legend>
+        <button class="select-all" aria-label="Select all <?php print $package_label; ?> blocks">Toggle all</button>
 
         <?php // Iterate over each BLOCK in the current package. ?>
-        <?php foreach( $package as $key => $label ): ?>
+        <?php foreach( $blocks as $id => $block ): ?>
           <?php // Check to see if this item is selected. ?>
-          <?php $is_checked = in_array( $key, $enabled_blocks ) ? 'checked' : ''; ?>
+          <?php $is_checked = in_array( $id, $enabled_blocks ) ? 'checked' : ''; ?>
 
           <?php // Add the checkbox for this item. ?>
           <label>
-            <input type="checkbox" name="gu_enabled_blocks[]" value="<?php print $key; ?>" <?php print $is_checked; ?>>
-            <?php print $label; ?>
+            <input type="checkbox" name="gu_enabled_blocks[]" value="<?php print $id; ?>" <?php print $is_checked; ?>>
+            <?php print $block; ?>
+            (Used <?php print $this->inventory[$id]; ?> times)
           </label>
         <?php endforeach; ?>
 

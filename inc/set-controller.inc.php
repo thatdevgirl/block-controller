@@ -13,16 +13,17 @@ class GUBlockController {
   private $packages;
 
   public function __construct() {
-    // Get the block packages supported by this plugin.
-    $blockPackages = new GUBlockPackages;
-    $this->packages = $blockPackages->generate();
+    // Get the supported block packages and inventory.
+    $block_packages = new GUBlockPackages;
+    $this->packages = $block_packages->get_packages();
+    $this->inventory = $block_packages->get_inventory();
 
+    // All the actions.
     add_action( 'admin_menu', array( $this, 'set_menu' ) );
     add_action( 'admin_init', array( $this, 'register_settings' ) );
     add_action( 'enqueue_block_editor_assets', array( $this, 'set_js_editor' ) );
     add_action( 'admin_head', array( $this, 'set_css' ) );
   }
-
 
   /*
    * Declare the settings menu.
@@ -39,7 +40,6 @@ class GUBlockController {
     );
   }
 
-
   /*
    * Callback to display the main settings page.
    */
@@ -47,14 +47,12 @@ class GUBlockController {
     require_once( 'template-settings.inc.php' );
   }
 
-
   /*
    * Register all settings.
    */
   public function register_settings() {
     register_setting( 'gu_block_group', 'gu_enabled_blocks' );
   }
-
 
   /*
    * Enqueue Javascript assets to the editor.
@@ -82,7 +80,6 @@ class GUBlockController {
     // Send list of blocks to disable to the JS for it to handle.
     wp_localize_script( 'gu-block-controller-js-editor', 'blocksToDisable', $this->get_blocks_to_disable() );
   }
-
 
   /*
 <<<<<<< HEAD
@@ -127,7 +124,6 @@ class GUBlockController {
     );
   }
 
-
   /*
 >>>>>>> 48d1b57... Adding CSS for settings
    * Get list of blocks to disable.
@@ -160,7 +156,6 @@ class GUBlockController {
     return $blocksToDisable;
   }
 }
-
 
 // Only call this class while in the WP admin.
 if ( is_admin() ) {

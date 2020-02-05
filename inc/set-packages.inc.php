@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * CLASS to deal with this plugin's list of all block packages and their
  * respective blocks. This also gets an inventory of how often each block
@@ -21,6 +22,17 @@ class GUBlockPackages {
    */
   private function set_packages() {
     $this->packages = array(
+=======
+
+class GUBlockPackages {
+
+  public function __construct() {
+    // Nothing to see here.
+  }
+
+  public function generate() {
+    return array(
+>>>>>>> 860e442... making package list more extensible
       'Core Blocks' => array(
         'core/heading' => 'Heading',
         'core/image'   => 'Image',
@@ -60,6 +72,7 @@ class GUBlockPackages {
     );
   }
 
+<<<<<<< HEAD
   /*
    * PRIVATE function to calculate the inventory of how many times a block is used
    * on the site.
@@ -147,4 +160,6 @@ class GUBlockPackages {
   public function get_inventory() {
     return $this->inventory;
   }
+=======
+>>>>>>> 860e442... making package list more extensible
 }

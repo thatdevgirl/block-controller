@@ -19,6 +19,7 @@ gulp.task( 'js-editor', () => {
     .pipe( gulp.dest( 'build' ) );
 } );
 
+<<<<<<< HEAD
 // JS admin build task.
 gulp.task( 'js-admin', () => {
   return browserify( { entries: [ 'source/js/settings-page.js' ] } )
@@ -30,6 +31,8 @@ gulp.task( 'js-admin', () => {
     .pipe( gulp.dest( 'build' ) );
 } );
 
+=======
+>>>>>>> c4a1636... Adding CSS for settings
 // CSS build task.
 gulp.task( 'css', () => {
   return gulp.src( 'source/scss/block-controller.scss' )
@@ -41,4 +44,8 @@ gulp.task( 'css', () => {
 
 
 // Default task.
+<<<<<<< HEAD
 gulp.task( 'default', gulp.series( 'js-editor', 'js-admin', 'css' ) );
+=======
+gulp.task( 'default', gulp.series( 'js', 'css' ) );
+>>>>>>> c4a1636... Adding CSS for settings

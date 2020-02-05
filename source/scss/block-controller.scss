@@ -3,37 +3,84 @@
  */
 
 $black: #000;
+<<<<<<< HEAD
 $white: #fff;
+$red: #900;
+
+/* ***
+ * Instructions block.
+ */
+
+.gu-block-controller-instructions {
+  .red-text {
+    color: $red;
+  }
+}
+
+
+
+/* ***
+ * The settings form.
+ */
 
 #gu-block-controller-settings {
   margin: 1rem 0;
+=======
+
+#gu-block-controller-settings {
+  margin: 1rem;
+>>>>>>> c4a1636... Adding CSS for settings
 
   fieldset {
     margin-bottom: 2rem;
   }
 
+<<<<<<< HEAD
   // Select all button for an entire package.
   .select-all {
-    float: left;
+    min-height: unset;
     margin-left: 0.5rem;
-    padding: 0.1rem 0.5rem;
-    border-radius: 0.25rem;
-    background-color: lighten( $black, 40% );
-    color: $white;
+    padding: 0.2rem 0.5rem;
     font-size: 0.75rem;
+    line-height: 1;
   }
 
+  // Top level package label.
   legend {
     float: left;
+=======
+  legend {
+>>>>>>> c4a1636... Adding CSS for settings
     margin-bottom: 1rem;
     color: $black;
     font-size: 1.25rem;
   }
 
+<<<<<<< HEAD
+  // Label for an individual block.
   label {
     display: block;
     clear: both;
     margin-bottom: 0.25rem;
     margin-left: 1rem;
+    font-size: 0.9rem;
+  }
+
+  // Counter text for blocks that exist at least once on the site.
+  .count {
+    display: inline-block;
+    margin-left: 0.25rem;
+    color: $red;
+    font-size: 0.75rem;
+  }
+
+  // Check mark for required-enabled blocks.
+  .check {
+    font-weight: bold;
+=======
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+>>>>>>> c4a1636... Adding CSS for settings
   }
 }

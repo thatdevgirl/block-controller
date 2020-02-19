@@ -27,7 +27,7 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 == Screenshots ==
 
-1. Settings page
+1. Screenshot of the main settings page, where administrators can enable and disable blocks.
 
 == Changelog ==
 

@@ -20,11 +20,9 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 ## To Dos
 
-* Add ThreePM header to settings page.
 * Figure out dependencies among blocks.
 * Support embeds?
 * Add another page that will list all pages that use a particular block.
-* Screenshots
-* Settings page link on plugins page
+* Screenshots and icons
 * Dashboard widget? (phase 2!)
 * Documentation on a threepm.thatdevgirl.com page.

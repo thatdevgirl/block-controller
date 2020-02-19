@@ -24,5 +24,7 @@ This WordPress plugin provides site administrators with the ability to turn on a
 * Figure out dependencies among blocks.
 * Support embeds?
 * Add another page that will list all pages that use a particular block.
+* Screenshots
+* Settings page link on plugins page
 * Dashboard widget? (phase 2!)
 * Documentation on a threepm.thatdevgirl.com page.

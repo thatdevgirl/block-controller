@@ -68,16 +68,16 @@ class GUBlockPackages {
         'core/verse'     => 'Verse'
       ),
 
+      'For Nerds' => array(
+        'core/code'         => 'Code',
+        'core/html'         => 'Custom HTML',
+        'core/preformatted' => 'Preformatted'
+      ),
+
       'Multimedia' => array(
         'core/audio'      => 'Audio',
         'core/file'       => 'File',
         'core/media-text' => 'Media and Text'
-      ),
-
-      'For Nerds Only' => array(
-        'core/code'         => 'Code',
-        'core/html'         => 'Custom HTML',
-        'core/preformatted' => 'Preformatted'
       ),
 
       'Layout Blocks' => array(

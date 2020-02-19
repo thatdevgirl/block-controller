@@ -4,6 +4,7 @@
    */
 ?>
 
-<header class="threepm-header" aria-labelledby="threepm-name">
-  <p id="threepm-name"><span>3:00</span>pm plugins</p>
+<header class="threepm-header" aria-labelledby="page-name">
+  <img src="<?php echo plugins_url( '../../images/threepm.svg', __FILE__ ); ?>" alt=" " class="logo">
+  <h1 id="page-name">Block Controller</h1>
 </header>

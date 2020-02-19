@@ -11,6 +11,7 @@
 <?php require_once( 'heading.inc.php' ); ?>
 
 <div class="wrap">
+<<<<<<< HEAD:threepm-block-controller/inc/templates/settings.inc.php
   <h1>Block Controller</h1>
 
 <<<<<<< HEAD
@@ -24,6 +25,8 @@
   <p class="block-controller-instructions">
 >>>>>>> 1748150... Refactoring scss; design updates to settings page; removing merge conflict files
 =======
+=======
+>>>>>>> c5429be... Moving settings page; updating settings page styles:threepm-block-controller/inc/templates/settings-main.inc.php
   <p>
 >>>>>>> c57785e... Simplifying how disabling works; updating settings page styles
     Use this page to enable and disable blocks for all post types. Any blocks

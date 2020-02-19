@@ -10,10 +10,10 @@
 
   @mixin base_checkbox {
     border: 0;
-    border-radius: 0;
+    border-radius: 0.5rem;
     color: $white;
     height: 2rem;
-    width: 4rem;
+    width: 5rem;
 
     &:before {
       content: '';
@@ -36,9 +36,15 @@
     // If a checkbox is not checked, then that block is enabled.
     &:not( :checked ) {
       background-color: $green;
+      color: $black;
 
       &::after {
         content: 'On';
+      }
+
+      &:hover,
+      &:focus {
+        background-color: darken( $green, 10% );
       }
     }
 
@@ -48,6 +54,11 @@
 
       &::after {
         content: 'Off';
+      }
+
+      &:hover,
+      &:focus {
+        background-color: darken( $red, 10% );
       }
     }
   }

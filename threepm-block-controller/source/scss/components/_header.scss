@@ -9,15 +9,14 @@
   margin-left: -1.25rem;
   padding: 1rem;
 
-  // Brand name container.
-  #threepm-name {
-    display: inline-block;
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
+  img.logo {
+    height: 2rem;
+    margin-right: 0.5rem;
+  }
 
-    span {
-      color: $blue;
-    }
+  h1 {
+    display: inline;
+    position: relative;
+    top: -0.35rem;
   }
 }

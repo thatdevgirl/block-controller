@@ -24,10 +24,6 @@ gulp.task( 'js-editor', () => {
     .pipe( gulp.dest( 'threepm-block-controller/build' ) );
 } );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress
 // JS admin build task.
 gulp.task( 'js-admin', () => {
   return browserify( { entries: [ 'threepm-block-controller/source/js/settings-page.js' ] } )
@@ -39,8 +35,6 @@ gulp.task( 'js-admin', () => {
     .pipe( gulp.dest( 'threepm-block-controller/build' ) );
 } );
 
-=======
->>>>>>> c4a1636... Adding CSS for settings
 // CSS build task.
 gulp.task( 'css', () => {
   return gulp.src( 'threepm-block-controller/source/scss/block-controller.scss' )
@@ -51,12 +45,4 @@ gulp.task( 'css', () => {
 } );
 
 // Default task.
-<<<<<<< HEAD
-<<<<<<< HEAD
 gulp.task( 'default', gulp.series( 'js-editor', 'js-admin', 'css' ) );
-=======
-gulp.task( 'default', gulp.series( 'js', 'css' ) );
->>>>>>> c4a1636... Adding CSS for settings
-=======
-gulp.task( 'default', gulp.series( 'js-editor', 'js-admin', 'css' ) );
->>>>>>> 28c3f21... Setting up JS for the settings page, adding a select all checkbox, in progress

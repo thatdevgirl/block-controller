@@ -1,14 +1,9 @@
 <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 502294e... Support for block counts
 /**
  * CLASS to deal with this plugin's list of all block packages and their
  * respective blocks. This also gets an inventory of how often each block
  * is used on the site.
  */
-<<<<<<< HEAD
 
 class TPMBlockPackages {
   private $packages;
@@ -26,32 +21,6 @@ class TPMBlockPackages {
    */
   private function set_packages() {
     $this->packages = array(
-=======
-=======
->>>>>>> 502294e... Support for block counts
-
-class GUBlockPackages {
-  private $packages;
-  private $inventory;
-
-  public function __construct() {
-    $this->set_packages();
-    $this->set_inventory();
-  }
-
-<<<<<<< HEAD
-  public function generate() {
-    return array(
->>>>>>> 860e442... making package list more extensible
-=======
-  /*
-   * PRIVATE function to return an associative array of packages. Each package
-   * array is an associative array of blocks, where the key is the editor ID
-   * and the value is the block label.
-   */
-  private function set_packages() {
-    $this->packages = array(
->>>>>>> 502294e... Support for block counts
       'Core Blocks' => array(
         'core/heading' => 'Heading',
         'core/image'   => 'Image',
@@ -91,10 +60,6 @@ class GUBlockPackages {
     );
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 502294e... Support for block counts
   /*
    * PRIVATE function to calculate the inventory of how many times a block is used
    * on the site.
@@ -182,9 +147,4 @@ class GUBlockPackages {
   public function get_inventory() {
     return $this->inventory;
   }
-<<<<<<< HEAD
-=======
->>>>>>> 860e442... making package list more extensible
-=======
->>>>>>> 502294e... Support for block counts
 }

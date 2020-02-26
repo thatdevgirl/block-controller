@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: ThreePM Block Controller
+ * Plugin Name: Block Controller
  * Description: This WordPress plugin allows administrators to control editor access to content blocks.
  * Version: 1.0
  * Author: Joni Halabi

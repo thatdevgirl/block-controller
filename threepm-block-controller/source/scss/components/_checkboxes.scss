@@ -36,7 +36,6 @@
     // If a checkbox is not checked, then that block is enabled.
     &:not( :checked ) {
       background-color: $green;
-      color: $black;
 
       &::after {
         content: 'On';

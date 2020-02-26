@@ -5,14 +5,14 @@
 // Submit.
 #block-controller-settings {
   input[type='submit'] {
-    background-color: lighten( $blue, 20% );
+    background-color: $blue;
     border-color: $blue;
     border-radius: 0.1rem;
     padding: 0.25rem 0.75rem;
 
     &:hover,
     &:focus {
-      background-color: lighten( $blue, 10% );
+      background-color: darken( $blue, 10% );
     }
   }
 }
@@ -20,7 +20,7 @@
 // Toggle all.
 .block-controller-package {
   .toggle-all {
-    background-color: lighten( $blue, 10% );
+    background-color: $blue;
     border: 0;
     color: $white;
     cursor: pointer;
@@ -31,7 +31,7 @@
 
     &:hover,
     &:focus {
-      background-color: lighten( $blue, 20% );
+      background-color: darken( $blue, 10% );
     }
   }
 }

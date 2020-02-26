@@ -40,13 +40,15 @@ class TPMBlockPackages {
       'For Nerds' => array(
         'core/code'         => 'Code',
         'core/html'         => 'Custom HTML',
-        'core/preformatted' => 'Preformatted'
+        'core/preformatted' => 'Preformatted',
+        'core/shortcode'    => 'Shortcode'
       ),
 
       'Multimedia' => array(
         'core/audio'      => 'Audio',
         'core/file'       => 'File',
-        'core/media-text' => 'Media and Text'
+        'core/media-text' => 'Media and Text',
+        'core/video'      => 'Video'
       ),
 
       'Layout Blocks' => array(
@@ -56,6 +58,55 @@ class TPMBlockPackages {
         'core/nextpage'  => 'Page Break',
         'core/separator' => 'Separator',
         'core/spacer'    => 'Spacer'
+      ),
+
+      'Social Media Embeds' => array(
+        'core-embed/amazon-kindle' => 'Amazon Kindle',
+        'core-embed/animoto' => 'Animoto',
+        'core-embed/cloudup' => 'Cloudup',
+        'core-embed/collegehumor' => 'CollegeHumor',
+        'core-embed/crowdsignal' => 'Crowdsignal',
+        'core-embed/dailymotion' => 'Dailymotion',
+        'core-embed/facebook' => 'Facebook',
+        'core-embed/flickr' => 'Flickr',
+        'core-embed/hulu' => 'Hulu',
+        'core-embed/imgur' => 'Imgur',
+        'core-embed/instagram' => 'Instagram',
+        'core-embed/issuu' => 'Issuu',
+        'core-embed/kickstarter' => 'Kickstarter',
+        'core-embed/meetup-com' => 'Meetup.com',
+        'core-embed/mixcloud' => 'Mixcloud',
+        'core-embed/polldaddy' => 'Polldaddy',
+        'core-embed/reddit' => 'Reddit',
+        'core-embed/reverbnation' => 'ReverbNation',
+        'core-embed/screencast' => 'Screencast',
+        'core-embed/scribd' => 'Scribd',
+        'core-embed/slideshare' => 'Slideshare',
+        'core-embed/smugmug' => 'SmugMug',
+        'core-embed/soundcloud' => 'SoundCloud',
+        'core-embed/speaker' => 'Speaker',
+        'core-embed/speaker-deck' => 'Speaker Deck',
+        'core-embed/spotify' => 'Spotify',
+        'core-embed/ted' => 'TED',
+        'core-embed/tiktok' => 'TikTok',
+        'core-embed/tumblr' => 'Tumblr',
+        'core-embed/twitter' => 'Twitter',
+        'core-embed/videopress' => 'VideoPress',
+        'core-embed/vimeo' => 'Vimeo',
+        'core-embed/wordpress' => 'WordPress',
+        'core-embed/wordpress-tv' => 'WordPress.tv',
+        'core-embed/youtube' => 'YouTube',
+      ),
+
+      'Post Widgets' => array(
+        'core/archives'        => 'Archives',
+        'core/calendar'        => 'Calendar',
+        'core/categories'      => 'Categories',
+        'core/latest-comments' => 'Latest Comments',
+        'core/latest-posts'    => 'Latest Posts',
+        'core/rss'             => 'RSS',
+        'core/search'          => 'Search',
+        'core/tag-cloud'       => 'Tag Cloud'
       )
     );
   }

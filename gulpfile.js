@@ -15,33 +15,33 @@ const gulp       = require( 'gulp' ),
 
 // JS editor build task.
 gulp.task( 'js-editor', () => {
-  return browserify( { entries: [ 'threepm-block-controller/source/js/disable-blocks.js' ] } )
+  return browserify( { entries: [ 'block-controller/source/js/disable-blocks.js' ] } )
     .transform( 'babelify', { presets: [ 'es2015', 'react' ] } )
     .bundle()
     .pipe( source( 'block-controller-editor.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
-    .pipe( gulp.dest( 'threepm-block-controller/build' ) );
+    .pipe( gulp.dest( 'block-controller/build' ) );
 } );
 
 // JS admin build task.
 gulp.task( 'js-admin', () => {
-  return browserify( { entries: [ 'threepm-block-controller/source/js/settings-page.js' ] } )
+  return browserify( { entries: [ 'block-controller/source/js/settings-page.js' ] } )
     .transform( 'babelify', { presets: [ 'es2015' ] } )
     .bundle()
     .pipe( source( 'block-controller-admin.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
-    .pipe( gulp.dest( 'threepm-block-controller/build' ) );
+    .pipe( gulp.dest( 'block-controller/build' ) );
 } );
 
 // CSS build task.
 gulp.task( 'css', () => {
-  return gulp.src( 'threepm-block-controller/source/scss/block-controller.scss' )
+  return gulp.src( 'block-controller/source/scss/block-controller.scss' )
     .pipe( sass().on( 'error', sass.logError ) )
     .pipe( clean() )
     .pipe( rename( { suffix: '.min' } ) )
-    .pipe( gulp.dest( 'threepm-block-controller/build' ) );
+    .pipe( gulp.dest( 'block-controller/build' ) );
 } );
 
 // Default task.

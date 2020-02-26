@@ -1,0 +1,14 @@
+/**
+ * Container for the list of posts on the audit page.
+ */
+
+.post-list {
+  p {
+    margin-top: 0;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+  }
+}

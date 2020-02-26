@@ -66,48 +66,44 @@ class TPMBlockPackages {
    */
   private function set_inventory() {
     $posts = $this->get_all_posts();
-    $blocks = $this->get_all_blocks();
 
-    /*
-     * TODO: I'll probably have to rewrite this section if we want to get a
-     * list of all of the pages that uses a particular block, but for right now,
-     * the fastest (and most efficient) way for me to get counts is to glob
-     * all of the content into one string and regex that string one time.
-     *
-     * If I want to get a list of pages that use a particular block, I think
-     * I am going to have to loop over each block inside of the loop of posts.
-     * So, ( n blocks )^( n posts )
-     *
-     * The following loops through all of the posts, saves all content into
-     * a single string, then loops through the blocks to get an overall
-     * sum of how many times a block is used. So, ( n blocks ) + ( n posts )
-     */
+    // Loop through all of the posts on the site.
+    foreach ( $posts as $post ) {
+      // Get all of the blocks used in that post.
+      $blocks = parse_blocks( $post->post_content );
 
-    // Loop through all of the posts to construct a single string containing
-    // all content for the entire site.
-    $all_content = '';
-    foreach( $posts as $post ) {
-      $all_content .= $post->post_content;
+      // Loop through each of the blocks in the post.
+      foreach ( $blocks as $block ) {
+        // Get the name of the current block.
+        $block_name = $block['blockName'];
+
+        // If there is no block name (weird edge case), skip this iteration.
+        if ( !$block_name ) { continue; }
+
+        // Check to see if the inventory has an entry for this block already.
+        // If not, create an entry array.
+        if ( ! $this->inventory[$block_name] ) {
+          $this->inventory[$block_name] = [];
+
+          // Overall usage total of the block throughout the entire site.
+          $this->inventory[$block_name]['total'] = 0;
+
+          // Array of posts in which this block is used.
+          $this->inventory[$block_name]['posts'] = [];
+        }
+
+        // Increment the block's overall usage total by 1.
+        $this->inventory[$block_name]['total']++;
+
+        // Add the post ID to this block's inventory if it is not already there.
+        if ( !in_array( $post->ID, $this->inventory[$block_name]['posts'] ) ) {
+          array_push( $this->inventory[$block_name]['posts'], $post->ID );
+        }
+      }
     }
 
-    // Loop through all of the blocks to get a count of how many times each
-    // block is used in the site.
-    foreach( $blocks as $block_id => $block_name ) {
-      // The block ID is in the format NAMESPACE/LABEL. In the content, it is
-      // saved as NAMESPACE:LABEL. Also, the core block IDs use the "core"
-      // namespace, but in the content, they use the "wp" namespace (because
-      // why be consistent?). We need to transform both of these things.
-      $transformed_id = str_replace( '/', ':', $block_id );
-      $transformed_id = str_replace( 'core', 'wp', $transformed_id );
-
-      // Next, find the number of times each bock is used in the content. Since
-      // each block has a beginning and end (XML-style) tag, if we count just
-      // the end tags, we will get a count of the number of blocks.
-      $block_count = substr_count( $all_content, '/' . $transformed_id );
-
-      // Save this count to the inventory (private class variable).
-      $this->inventory[ $block_id ] = $block_count;
-    }
+    // Alphabetize the inventory by block name (key).
+    ksort( $this->inventory );
   }
 
   /*
@@ -133,18 +129,18 @@ class TPMBlockPackages {
   }
 
   /*
+   * PUBLIC function to return the inventory array.
+   */
+  public function get_inventory() {
+    return $this->inventory;
+  }
+
+  /*
    * PUBLIC function to return an array of all blocks supported by this plugin.
    * The array is generated from the package array, but is returned as one single
    * array (instead of being broken up by package).
    */
   public function get_all_blocks() {
     return call_user_func_array( 'array_merge', $this->packages );
-  }
-
-  /*
-   * PUBLIC function to return the inventory array.
-   */
-  public function get_inventory() {
-    return $this->inventory;
   }
 }

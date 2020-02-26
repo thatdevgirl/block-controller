@@ -15,6 +15,7 @@ class TPMBlockController {
     $block_packages = new TPMBlockPackages;
     $this->packages = $block_packages->get_packages();
     $this->inventory = $block_packages->get_inventory();
+    $this->all_blocks = $block_packages->get_all_blocks();
 
     // All the actions.
     add_action( 'admin_menu', array( $this, 'set_menu' ) );

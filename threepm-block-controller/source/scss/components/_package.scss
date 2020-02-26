@@ -19,8 +19,12 @@
     position: relative;
 
     // Heading text.
-    legend {
+    legend,
+    h2 {
       font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 0;
+      margin-top: 0;
     }
   }
 

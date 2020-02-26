@@ -1,6 +1,6 @@
 <?php
   /**
-   * Template for the plugin settings page.
+   * Template for the plugin main settings page.
    *   This template lists all blocks supported by this plugin and displays
    *   a form that administrators can use to enable and disable blocks.
    */
@@ -60,7 +60,7 @@
 
               <?php // Only display the block count if the block is actually used. ?>
               <?php if ( $is_used ): ?>
-                <span class="count"> – Used <?php print $this->inventory[$id]; ?> time(s)</span>
+                <span class="count"> – Used <?php print $this->inventory[$id]['total']; ?> time(s)</span>
               <?php endif; ?>
             </label>
           <?php endforeach; ?>

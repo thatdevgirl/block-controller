@@ -22,19 +22,23 @@ class TPMBlockPackages {
   private function set_packages() {
     $this->packages = array(
       'Core Blocks' => array(
+        'core/button'  => 'Button',
         'core/heading' => 'Heading',
         'core/image'   => 'Image',
         'core/list'    => 'List',
-        'core/table'   => 'Table'
+        'core/table'   => 'Table',
+        'core/video'   => 'Video'
       ),
 
       'For Marketers' => array(
-        'core/button'    => 'Button',
-        'core/cover'     => 'Cover',
-        'core/gallery'   => 'Gallery',
-        'core/pullquote' => 'Pullquote',
-        'core/quote'     => 'Quote',
-        'core/verse'     => 'Verse'
+        'core/audio'      => 'Audio',
+        'core/cover'      => 'Cover',
+        'core/file'       => 'File',
+        'core/gallery'    => 'Gallery',
+        'core/media-text' => 'Media and Text',
+        'core/pullquote'  => 'Pullquote',
+        'core/quote'      => 'Quote',
+        'core/verse'      => 'Verse'
       ),
 
       'For Nerds' => array(
@@ -42,13 +46,6 @@ class TPMBlockPackages {
         'core/html'         => 'Custom HTML',
         'core/preformatted' => 'Preformatted',
         'core/shortcode'    => 'Shortcode'
-      ),
-
-      'Multimedia' => array(
-        'core/audio'      => 'Audio',
-        'core/file'       => 'File',
-        'core/media-text' => 'Media and Text',
-        'core/video'      => 'Video'
       ),
 
       'Layout Blocks' => array(

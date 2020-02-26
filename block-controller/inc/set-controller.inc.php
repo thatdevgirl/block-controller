@@ -30,12 +30,13 @@ class TPMBlockController {
   public function set_menu() {
     // Main options page.
     add_menu_page(
-      'Block Controller',                             // page title
-      'Block Controller',                             // menu title
-      'manage_options',                               // capability - for admins only
-      'block_controller',                             // slug
-      array( $this, 'set_main_callback' ),            // callback
-      'data:image/svg+xml;base64,' . $this->menu_icon // icon
+      'Block Controller',                              // page title
+      'Block Controller',                              // menu title
+      'manage_options',                                // capability - for admins only
+      'block_controller',                              // slug
+      array( $this, 'set_main_callback' ),             // callback
+      'data:image/svg+xml;base64,' . $this->menu_icon, // icon
+      61                                               // menu position
     );
 
     // Submenu page for the block audit listing.

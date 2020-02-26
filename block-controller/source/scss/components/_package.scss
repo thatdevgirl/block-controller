@@ -35,6 +35,11 @@
   .options {
     padding: 1rem;
 
+    p {
+      margin-bottom: 1.5rem;
+      margin-top: 0;
+    }
+
     // Label for an individual block.
     label {
       cursor: default;

@@ -37,6 +37,16 @@
 
         <?php // Options block. ?>
         <div class="options">
+          <?php // Disclaimer for core blocks package. ?>
+          <?php if ( $package_label == 'Core Blocks' ): ?>
+            <p>
+              <strong>Important!!</strong>
+              It is <em>strongly</em> recommended that you leave all core blocks on.
+              Many of these blocks are used inside other blocks. Turning off a core
+              block may break other blocks on your site.
+            </p>
+          <?php endif; ?>
+
           <?php // Iterate over each BLOCK in the current package. ?>
           <?php foreach( $blocks as $id => $block ): ?>
             <?php // Check to see if this item is selected. ?>

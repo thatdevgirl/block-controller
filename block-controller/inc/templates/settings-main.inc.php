@@ -50,7 +50,13 @@
           <?php // Iterate over each BLOCK in the current package. ?>
           <?php foreach( $blocks as $id => $block ): ?>
             <?php // Check to see if this item is selected. ?>
-            <?php $is_checked = in_array( $id, $disabled_blocks ) ? 'checked' : ''; ?>
+            <?php
+              if ( is_array( $disabled_blocks ) ) {
+                $is_checked = in_array( $id, $disabled_blocks ) ? 'checked' : '';
+              } else {
+                $is_checked = '';
+              }
+            ?>
 
             <?php // Check to see if this block is used on the site. ?>
             <?php // If so, checkbox should be UNCHECKED b/c that block needs to remain enabled. ?>

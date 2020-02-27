@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Block Controller
  * Description: This WordPress plugin allows administrators to control editor access to content blocks.
- * Version: 1.0
+ * Version: 1.0.2
  * Author: Joni Halabi
  * Author URI: https://thatdevgirl.com
  * License: GPL2

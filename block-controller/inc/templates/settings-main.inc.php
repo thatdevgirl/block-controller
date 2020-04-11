@@ -60,7 +60,7 @@
 
             <?php // Check to see if this block is used on the site. ?>
             <?php // If so, checkbox should be UNCHECKED b/c that block needs to remain enabled. ?>
-            <?php $is_used = ( $this->inventory[$id] ) ? true : false; ?>
+            <?php $is_used = ( array_key_exists( $id, $this->inventory ) ) ? true : false; ?>
 
             <label>
               <?php // Add the checkbox for this item, depending on whether it is used or not. ?>

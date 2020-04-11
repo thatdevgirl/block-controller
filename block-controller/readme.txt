@@ -4,8 +4,8 @@ Donate Link: https://www.paypal.me/thatdevgirl
 Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 5.3.2
-Stable tag: 1.0.2
+Tested up to: 5.4
+Stable tag: 1.1
 
 Turn on and off specific post editor content blocks.
 
@@ -35,8 +35,11 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 == Changelog ==
 
-= 1.0 =
-* Initial release
+= 1.1 =
+* Tested for support with WordPress core 5.4.
 
 = 1.0.2 =
 * A small update was needed for when the plugin is initially installed, to add a check if the DB has no disabled blocks option (because it doesn't!).
+
+= 1.0 =
+* Initial release

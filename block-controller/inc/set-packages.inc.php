@@ -22,7 +22,7 @@ class TPMBlockPackages {
   private function set_packages() {
     $this->packages = array(
       'Core Blocks' => array(
-        'core/button'  => 'Button',
+        'core/buttons' => 'Button',
         'core/heading' => 'Heading',
         'core/image'   => 'Image',
         'core/list'    => 'List',
@@ -113,6 +113,10 @@ class TPMBlockPackages {
    * on the site.
    */
   private function set_inventory() {
+    // Initialize the inventory array.
+    $this->inventory = [];
+
+    // Get all of the posts in the site.
     $posts = $this->get_all_posts();
 
     // Loop through all of the posts on the site.
@@ -130,7 +134,7 @@ class TPMBlockPackages {
 
         // Check to see if the inventory has an entry for this block already.
         // If not, create an entry array.
-        if ( ! $this->inventory[$block_name] ) {
+        if ( ! array_key_exists( $block_name, $this->inventory ) ) {
           $this->inventory[$block_name] = [];
 
           // Overall usage total of the block throughout the entire site.

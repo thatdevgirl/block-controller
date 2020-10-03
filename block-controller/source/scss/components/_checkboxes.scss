@@ -12,8 +12,8 @@
     border: 0;
     border-radius: 0.5rem;
     color: $white;
-    height: 2rem;
-    width: 5rem;
+    height: 1.3rem;
+    width: 4rem;
 
     &:before {
       content: '';
@@ -21,8 +21,8 @@
 
     &:after {
       display: block;
-      font-size: 0.8rem;
-      padding: 1rem;
+      font-size: 0.85rem;
+      padding-top: 0.65rem;
     }
   }
 
@@ -64,13 +64,12 @@
 
   .required {
     @include base_checkbox;
-    background-color: $gray;
-    color: $black;
-    display: inline-block;
-    font-size: 0.8rem;
-    height: 1.6rem;
-    margin-right: 0.2rem;
-    padding-top: 0.5rem;
-    text-align: center;
+    // background-color: $gray;
+    // color: $black;
+    // display: inline-block;
+    // font-size: 0.85rem;
+    // margin-right: 0.2rem;
+    // padding-top: 0.2rem;
+    // text-align: center;
   }
 }

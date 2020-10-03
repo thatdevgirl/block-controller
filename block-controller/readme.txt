@@ -37,6 +37,9 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 = 1.1 =
 * Tested for support with WordPress core 5.4.
+* Fixed PHP bugs related to the 5.4 update.
+* Reorganized the list of core blocks on the settings page to be less arbitrary.
+* CSS updates.
 
 = 1.0.2 =
 * A small update was needed for when the plugin is initially installed, to add a check if the DB has no disabled blocks option (because it doesn't!).

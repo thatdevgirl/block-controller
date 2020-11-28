@@ -8,7 +8,7 @@
 
 <?php $disabled_blocks = maybe_unserialize( get_option( 'tpm_disabled_blocks' ) ); ?>
 
-<?php require_once( 'heading.inc.php' ); ?>
+<?php require_once( 'heading.php' ); ?>
 
 <div class="wrap">
   <p>

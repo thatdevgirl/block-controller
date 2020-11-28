@@ -15,6 +15,5 @@ if ( !defined( 'ABSPATH' ) ) {
   exit;
 }
 
-require_once( 'inc/set-plugin-meta.inc.php' );
-require_once( 'inc/set-plugin-action-links.inc.php' );
-require_once( 'inc/set-controller.inc.php' );
+require_once( 'inc/assets.php' );
+require_once( 'inc/settings.php' );

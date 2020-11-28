@@ -1,62 +1,78 @@
 <?php
 /**
- * CLASS to deal with this plugin's list of all block packages and their
+ * Packages.
+ *
+ * Class to deal with this plugin's list of all block packages and their
  * respective blocks. This also gets an inventory of how often each block
  * is used on the site.
  */
 
-class TPMBlockPackages {
+namespace ThreePM\BlockController;
+
+class Packages {
+
   private $packages;
   private $inventory;
 
-  public function __construct() {
-    $this->set_packages();
-    $this->set_inventory();
-  }
 
-  /*
-   * PRIVATE function to return an associative array of packages. Each package
-   * array is an associative array of blocks, where the key is the editor ID
-   * and the value is the block label.
+  /**
+   * get_packages()
+   *
+   * Return an associative array of packages to the $packages class variable.
+   * Each package array is an associative array of blocks, where the key is
+   * the editor ID and the value is the block label.
+   *
+   * @return void
    */
-  private function set_packages() {
-    $this->packages = array(
-      'Core Blocks' => array(
-        'core/archives'        => 'Archives',
-        'core/audio'           => 'Audio',
-        'core/buttons'         => 'Button',
-        'core/calendar'        => 'Calendar',
-        'core/categories'      => 'Categories',
+  public function get_packages(): array {
+    return array(
+      'Text' => array(
         'core/code'            => 'Code',
-        'core/columns'         => 'Columns',
-        'core/cover'           => 'Cover',
-        'core/html'            => 'Custom HTML',
-        'core/file'            => 'File',
-        'core/gallery'         => 'Gallery',
-        'core/group'           => 'Group',
         'core/heading'         => 'Heading',
-        'core/image'           => 'Image',
-        'core/latest-comments' => 'Latest Comments',
-        'core/latest-posts'    => 'Latest Posts',
         'core/list'            => 'List',
-        'core/media-text'      => 'Media and Text',
-        'core/more'            => 'More',
-        'core/nextpage'        => 'Page Break',
         'core/preformatted'    => 'Preformatted',
         'core/pullquote'       => 'Pullquote',
         'core/quote'           => 'Quote',
-        'core/rss'             => 'RSS',
-        'core/search'          => 'Search',
-        'core/separator'       => 'Separator',
-        'core/shortcode'       => 'Shortcode',
-        'core/spacer'          => 'Spacer',
         'core/table'           => 'Table',
-        'core/tag-cloud'       => 'Tag Cloud',
-        'core/verse'           => 'Verse',
-        'core/video'           => 'Video',
+        'core/verse'           => 'Verse'
       ),
 
-      'Core Embed Blocks' => array(
+      'Media' => array(
+        'core/audio'           => 'Audio',
+        'core/cover'           => 'Cover',
+        'core/file'            => 'File',
+        'core/gallery'         => 'Gallery',
+        'core/image'           => 'Image',
+        'core/media-text'      => 'Media & Text',
+        'core/video'           => 'Video'
+      ),
+
+      'Design' => array(
+        'core/buttons'         => 'Buttons',
+        'core/columns'         => 'Columns',
+        'core/group'           => 'Group',
+        'core/more'            => 'More',
+        'core/nextpage'        => 'Page Break',
+        'core/separator'       => 'Separator',
+        'core/spacer'          => 'Spacer'
+      ),
+
+      'Widgets' => array(
+        'core/archives'        => 'Archives',
+        'core/calendar'        => 'Calendar',
+        'core/categories'      => 'Categories',
+        'core/html'            => 'Custom HTML',
+        'core/latest-comments' => 'Latest Comments',
+        'core/latest-posts'    => 'Latest Posts',
+        'core/rss'             => 'RSS',
+        'core/search'          => 'Search',
+        'core/shortcode'       => 'Shortcode',
+        'core/social-links'    => 'Social Icons',
+        'core/tag-cloud'       => 'Tag Cloud',
+      ),
+
+      'Embeds' => array(
+        'core/embed'               => 'Embed',
         'core-embed/amazon-kindle' => 'Amazon Kindle',
         'core-embed/animoto'       => 'Animoto',
         'core-embed/cloudup'       => 'Cloudup',
@@ -96,11 +112,16 @@ class TPMBlockPackages {
     );
   }
 
-  /*
-   * PRIVATE function to calculate the inventory of how many times a block is used
-   * on the site.
+
+  /**
+   * set_inventory()
+   *
+   * Calculate the inventory of how many times a block is used on the site.
+   * Information is saved to the $inventory class variable.
+   *
+   * @return void
    */
-  private function set_inventory() {
+  private function set_inventory(): void {
     // Initialize the inventory array.
     $this->inventory = [];
 
@@ -146,10 +167,15 @@ class TPMBlockPackages {
     ksort( $this->inventory );
   }
 
-  /*
-   * PRIVATE function to get all posts, so we can inventory them for blocks.
+
+  /**
+   * get_all_posts()
+   *
+   * Get all posts, so we can inventory them for blocks.
+   *
+   * @return object
    */
-  private function get_all_posts() {
+  private function get_all_posts(): object {
     // Arguments to get all posts and pages.
     $args = array(
       'numberposts' => -1, // Get all posts
@@ -161,12 +187,6 @@ class TPMBlockPackages {
     return get_posts( $args );
   }
 
-  /*
-   * PUBLIC function to return the array of packages, as is.
-   */
-  public function get_packages() {
-    return $this->packages;
-  }
 
   /*
    * PUBLIC function to return the inventory array.
@@ -175,12 +195,14 @@ class TPMBlockPackages {
     return $this->inventory;
   }
 
+
   /*
    * PUBLIC function to return an array of all blocks supported by this plugin.
    * The array is generated from the package array, but is returned as one single
    * array (instead of being broken up by package).
    */
   public function get_all_blocks() {
-    return call_user_func_array( 'array_merge', $this->packages );
+    return call_user_func_array( 'array_merge', $this->get_packages() );
   }
+
 }

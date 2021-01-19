@@ -44,23 +44,23 @@ class Settings {
   public function set_menu(): void {
     // Main options page.
     add_menu_page(
-      'Block Controller',             // page title
-      'Block Controller',             // menu title
-      'manage_options',               // capability - for admins only
-      'block_controller',             // slug
-      [ $this, 'callback_main' ],     // callback
-      self::MENU_ICON,                // icon
-      61                              // menu position
+      'Block Controller',         // page title
+      'Block Controller',         // menu title
+      'manage_options',           // capability - for admins only
+      'block_controller',         // slug
+      [ $this, 'callback_main' ], // callback
+      self::MENU_ICON,            // icon
+      61                          // menu position
     );
 
     // Submenu page for the block audit listing.
     add_submenu_page(
-      'block_controller',             // parent slug
-      'Block Audit',                  // page title
-      'Block Audit',                  // menu title
-      'manage_options',               // capability - for admins only
-      'block_controller_audit',       // slug
-      [ $this, 'callback_audit' ]     // callback
+      'block_controller',         // parent slug
+      'Block Audit',              // page title
+      'Block Audit',              // menu title
+      'manage_options',           // capability - for admins only
+      'block_controller_audit',   // slug
+      [ $this, 'callback_audit' ] // callback
     );
   }
 

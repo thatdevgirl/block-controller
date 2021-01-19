@@ -27,7 +27,7 @@ class Assets {
    */
   public function set_admin_assets(): void {
     $handle = 'tpm-block-controller-admin';
-    $css = '../build/block-controller.min.css';
+    $css = '../build/block-controller.css';
     $js = '../build/block-controller-admin.min.js';
 
     wp_enqueue_style(
@@ -60,7 +60,7 @@ class Assets {
     wp_enqueue_script(
       $handle,
       plugins_url( $js, __FILE__ ),
-      [ 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
+      [ 'wp-hooks' ],
       filemtime( plugin_dir_path( __FILE__ ) . $js )
     );
 
@@ -76,7 +76,7 @@ class Assets {
    *
    * @return string|null
    */
-  private function get_disabled_blocks(): ?string {
+  private function get_disabled_blocks() {
     return maybe_unserialize( get_option( 'tpm_disabled_blocks' ) );
   }
 

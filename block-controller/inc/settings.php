@@ -8,6 +8,7 @@
 namespace ThreePM\BlockController;
 
 require_once( 'packages.php' );
+require_once( 'inventory.php' );
 
 class Settings {
 
@@ -26,8 +27,9 @@ class Settings {
 
     // Get the supported block packages and inventory.
     $block_packages = new Packages;
+    $inventory = new Inventory;
     $this->packages = $block_packages->get_packages();
-    $this->inventory = $block_packages->get_inventory();
+    $this->inventory = $inventory->get_inventory();
     $this->all_blocks = $block_packages->get_all_blocks();
   }
 

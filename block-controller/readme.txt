@@ -4,7 +4,7 @@ Donate Link: https://www.paypal.me/thatdevgirl
 Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 5.5.1
+Tested up to: 5.6
 Stable tag: 1.1
 
 Turn on and off specific post editor content blocks.

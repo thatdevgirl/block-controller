@@ -4,45 +4,58 @@
 
 // Declare gulp libraries.
 const gulp       = require( 'gulp' ),
-      babel      = require( 'gulp-babel' )
       browserify = require( 'browserify' ),
       buffer     = require( 'vinyl-buffer' ),
-      clean      = require( 'gulp-clean-css' ),
-      rename     = require( 'gulp-rename' ),
+      concat     = require( 'gulp-concat' ),
       sass       = require( 'gulp-sass' ),
+      sassLint   = require( 'gulp-sass-lint' ),
       source     = require( 'vinyl-source-stream' ),
       uglify     = require( 'gulp-uglify' );
 
-// JS editor build task.
-gulp.task( 'js-editor', () => {
+
+// Build editor JS files.
+function jsEditorTask( done ) {
   return browserify( { entries: [ 'block-controller/source/js/disable-blocks.js' ] } )
-    .transform( 'babelify', { presets: [ 'es2015', 'react' ] } )
+    .transform( 'babelify', { presets: [ '@babel/preset-env', '@babel/preset-react' ] } )
     .bundle()
     .pipe( source( 'block-controller-editor.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
     .pipe( gulp.dest( 'block-controller/build' ) );
-} );
+}
 
-// JS admin build task.
-gulp.task( 'js-admin', () => {
+
+// Build admin JS files.
+function jsAdminTask( done ) {
   return browserify( { entries: [ 'block-controller/source/js/settings-page.js' ] } )
-    .transform( 'babelify', { presets: [ 'es2015' ] } )
+    .transform( 'babelify', { presets: [ '@babel/preset-env', '@babel/preset-react' ] } )
     .bundle()
     .pipe( source( 'block-controller-admin.min.js' ) )
     .pipe( buffer() )
     .pipe( uglify() )
     .pipe( gulp.dest( 'block-controller/build' ) );
-} );
+};
 
-// CSS build task.
-gulp.task( 'css', () => {
+
+// Build CSS files.
+function cssTask( done ) {
   return gulp.src( 'block-controller/source/scss/block-controller.scss' )
-    .pipe( sass().on( 'error', sass.logError ) )
-    .pipe( clean() )
-    .pipe( rename( { suffix: '.min' } ) )
+    .pipe( sass( { outputStyle: 'compressed' } ) )
     .pipe( gulp.dest( 'block-controller/build' ) );
-} );
+};
 
-// Default task.
-gulp.task( 'default', gulp.series( 'js-editor', 'js-admin', 'css' ) );
+
+// Build everything.
+function buildTask( done ) {
+  jsEditorTask( done );
+  jsAdminTask( done );
+  cssTask( done );
+  done();
+}
+
+
+// Tasks.
+gulp.task( 'jsEditor', jsEditorTask );
+gulp.task( 'jsAdmin', jsAdminTask );
+gulp.task( 'css', cssTask );
+gulp.task( 'default', buildTask );

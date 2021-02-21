@@ -12,10 +12,15 @@
 
 <div class="wrap">
   <p>
-    Use this page to enable and disable blocks for all post types. Any blocks
-    that are already being used by any posts will still be listed here, but will
-    be automatically <strong>enabled</strong>, because disabling a block in use
-    will potentially break your page.
+    Use this page to enable and disable blocks for all post types.
+  </p>
+
+  <p>
+    <b>Blocks in use:</b> You may disable blocks that are currently used by a
+    post or page. The blocks already on that page will remain. However, please
+    note that you will not be able to add any new blocks of that type, nor
+    will you be able to re-add that block if you delete the existing block.
+    Blocks that are in use already will indicate how many times they are used.
   </p>
 
   <form method="post" action="options.php" id="block-controller-settings">
@@ -43,7 +48,7 @@
               <strong>Important!!</strong>
               It is <em>strongly</em> recommended that you leave all core blocks on.
               Many of these blocks are used inside other blocks. Turning off a core
-              block may break other blocks on your site.
+              block may have unexpected consequences as a result.
             </p>
           <?php endif; ?>
 
@@ -58,23 +63,13 @@
               }
             ?>
 
-            <?php // Check to see if this block is used on the site. ?>
-            <?php // If so, checkbox should be UNCHECKED b/c that block needs to remain enabled. ?>
-            <?php $is_used = ( array_key_exists( $id, $this->inventory ) ) ? true : false; ?>
-
             <label>
-              <?php // Add the checkbox for this item, depending on whether it is used or not. ?>
-              <?php if ( $is_used ): ?>
-                <?php // If this block is used, remove the input field and add a text checkmark. ?>
-                <span class="required">On</span>
-              <?php else: ?>
-                <?php // Otherwise, add a regular checkbox. ?>
-                <input type="checkbox" name="tpm_disabled_blocks[]" value="<?php print $id; ?>" <?php print $is_checked; ?>>
-              <?php endif; ?>
+              <input type="checkbox" name="tpm_disabled_blocks[]" value="<?php print $id; ?>" <?php print $is_checked; ?>>
 
               <?php print $block; ?>
 
               <?php // Only display the block count if the block is actually used. ?>
+              <?php $is_used = ( array_key_exists( $id, $this->inventory ) ) ? true : false; ?>
               <?php if ( $is_used ): ?>
                 <span class="count"> – Used <?php print $this->inventory[$id]['total']; ?> time(s)</span>
               <?php endif; ?>

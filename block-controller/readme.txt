@@ -36,10 +36,11 @@ This WordPress plugin provides site administrators with the ability to turn on a
 == Changelog ==
 
 = 1.1 =
-* Tested for support with WordPress core 5.5.
-* Fixed PHP bugs related to the 5.5 update.
+* Tested for support with WordPress core 5.7.
+* Fixed PHP bugs related to recent WP core updates.
 * Reorganized the list of core blocks on the settings page to be less arbitrary.
 * CSS updates.
+* Changed the way blocks are disabled. Instead of unregistering blocks in the editor (which is risky if this is done on a site where that block is being used), the blocks are simply removed from the Block Inserter.
 
 = 1.0.2 =
 * A small update was needed for when the plugin is initially installed, to add a check if the DB has no disabled blocks option (because it doesn't!).

@@ -1,10 +1,10 @@
-=== ThreePM Block Controller ===
+=== Block Controller ===
 Contributors: thatdevgirl
 Donate Link: https://www.paypal.me/thatdevgirl
 Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: 1.1
 
 Turn on and off specific post editor content blocks.
@@ -15,9 +15,9 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 == Installation ==
 
-1. In the WordPress admin, install and activate the ThreePM Block Controller plugin.
+1. In the WordPress admin, install and activate the Block Controller plugin.
 
-2. Go to the plugin's settings page under `Block Controller`. _(Only administrators have access to this page.)_
+2. Go to the plugin's settings page under `Block Controller`.
 
 3. All blocks are on (enabled) by default to prevent compatibility issues on plugin activation.
 
@@ -37,10 +37,12 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 = 1.1 =
 * Tested for support with WordPress core 5.7.
-* Fixed PHP bugs related to recent WP core updates.
-* Reorganized the list of core blocks on the settings page to be less arbitrary.
-* CSS updates.
 * Changed the way blocks are disabled. Instead of unregistering blocks in the editor (which is risky if this is done on a site where that block is being used), the blocks are simply removed from the Block Inserter.
+* FIX: You can actually disable the Classic block now.
+* FIX: Since embed blocks are variations of the core embed block (as of core 5.6), fixed the way those blocks are disabled so they actually disable.
+* FIX: Squashed PHP bugs related to recent WP core updates.
+* Reorganized the list of core blocks on the settings page to be less arbitrary.
+* CSS updates to the settings pages.
 
 = 1.0.2 =
 * A small update was needed for when the plugin is initially installed, to add a check if the DB has no disabled blocks option (because it doesn't!).

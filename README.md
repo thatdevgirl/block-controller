@@ -1,4 +1,4 @@
-# ThreePM Block Controller
+# Block Controller
 
 This WordPress plugin provides site administrators with the ability to turn on and off specific post editor (Gutenberg) content blocks.
 
@@ -6,7 +6,7 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 1. In the WordPress admin, install and activate the Block Controller plugin.
 
-2. Go to the plugin's settings page under `Block Controller`. _(Only administrators have access to this page.)_
+2. Go to the plugin's settings page under `Block Controller`.
 
 3. All blocks are on (enabled) by default to prevent compatibility issues on plugin activation.
 
@@ -16,13 +16,6 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 6. Go to the Block Audit page (under `Block Controller -> Block Audit`) to see a list of all blocks used across the site, as well as their associated posts.
 
-### Special blocks
-
-* The `core/paragraph` and `core/classic` blocks should never, ever, ever be disabled because they are default blocks in the Gutenberg system. Therefore, they are not listed in this plugin.
-
 ## To Dos
 
-* Figure out dependencies among blocks.
-* Support embeds?
 * Dashboard widget? (phase 2!)
-* Documentation on a threepm.thatdevgirl.com page.

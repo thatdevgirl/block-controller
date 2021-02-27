@@ -7,7 +7,7 @@
   border: 1px solid $gray;
   border-radius: 0.15rem;
   box-shadow: $gray 0 1px;
-  margin: 1rem 0;
+  margin: 2rem 0;
 
   /*
    * Section heading.
@@ -33,7 +33,7 @@
    */
 
   .options {
-    padding: 1rem;
+    padding: 2rem 1rem;
 
     p {
       margin-bottom: 1.5rem;
@@ -45,8 +45,7 @@
       cursor: default;
       display: block;
       font-size: 0.85rem;
-      margin-bottom: 0.75rem;
-      margin-left: 0.25rem;
+      margin-bottom: 1rem;
     }
 
     // Counter text for blocks that exist at least once on the site.
@@ -54,7 +53,7 @@
       color: $red;
       display: inline-block;
       font-size: 0.75rem;
-      margin-left: 0.25rem;
+      margin-left: 0.5rem;
     }
   }
 }

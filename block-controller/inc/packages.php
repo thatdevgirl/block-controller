@@ -13,7 +13,7 @@ class Packages {
 
   private const PACKAGES = [
     'Text' => [
-      'core/classic'         => 'Classic',
+      'core/freeform'        => 'Classic',
       'core/code'            => 'Code',
       'core/heading'         => 'Heading',
       'core/list'            => 'List',
@@ -60,7 +60,7 @@ class Packages {
     ],
 
     'Embeds' => [
-      'core/embed'               => 'Embed',
+      'core/embed'               => 'Embed - <i>(Turning this block off disabled all other embed variations.)</i>',
       'core-embed/amazon-kindle' => 'Amazon Kindle',
       'core-embed/animoto'       => 'Animoto',
       'core-embed/cloudup'       => 'Cloudup',

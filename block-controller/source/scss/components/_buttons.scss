@@ -19,7 +19,8 @@
 
 // Toggle all.
 .block-controller-package {
-  .toggle-all {
+  .toggle-all-on,
+  .toggle-all-off {
     background-color: $blue;
     border: 0;
     color: $white;
@@ -33,5 +34,9 @@
     &:focus {
       background-color: darken( $blue, 10% );
     }
+  }
+
+  .toggle-all-on {
+    right: 5rem;
   }
 }

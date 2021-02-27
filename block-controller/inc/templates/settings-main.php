@@ -8,7 +8,7 @@
 
 <?php $disabled_blocks = maybe_unserialize( get_option( 'tpm_disabled_blocks' ) ); ?>
 
-<?php require_once( 'heading.php' ); ?>
+<h1 class="block-controller-heading">Block Controller</h1>
 
 <div class="wrap">
   <p>
@@ -34,46 +34,53 @@
     <?php foreach( $this->packages as $package_label => $blocks ): ?>
       <fieldset class="block-controller-package">
 
-        <?php // Section header. ?>
+
         <div class="heading">
           <legend><?php print $package_label; ?></legend>
-          <button class="toggle-all" aria-label="Toggle all <?php print $package_label; ?> blocks">Toggle all</button>
+          <button class="toggle-all-on" aria-label="Turn on all <?php print $package_label; ?> blocks">All On</button>
+          <button class="toggle-all-off" aria-label="Turn off all <?php print $package_label; ?> blocks">All Off</button>
         </div>
 
-        <?php // Options block. ?>
-        <div class="options">
-          <?php // Disclaimer for core blocks package. ?>
-          <?php if ( $package_label == 'Core Blocks' ): ?>
-            <p>
-              <strong>Important!!</strong>
-              It is <em>strongly</em> recommended that you leave all core blocks on.
-              Many of these blocks are used inside other blocks. Turning off a core
-              block may have unexpected consequences as a result.
-            </p>
-          <?php endif; ?>
 
-          <?php // Iterate over each BLOCK in the current package. ?>
-          <?php foreach( $blocks as $id => $block ): ?>
-            <?php // Check to see if this item is selected. ?>
-            <?php
+        <div class="options">
+
+          <?php
+            // Iterate over each BLOCK in the current package.
+            foreach( $blocks as $id => $block ):
+              // Check to see if this item is selected. If it is, we want to set
+              // the "checked" attribute on the checkbox.
               if ( is_array( $disabled_blocks ) ) {
                 $is_checked = in_array( $id, $disabled_blocks ) ? 'checked' : '';
               } else {
                 $is_checked = '';
               }
+
+              // Check to see if this item is being used in any post.
+              $is_used = ( array_key_exists( $id, $this->inventory ) ) ? true : false;
+
+              // If the item is being used in any post, we want to set the
+              // "disabled" attribute on the checkbox.
+              $is_disabled = $is_used ? 'disabled' : '';
             ?>
 
             <label>
-              <input type="checkbox" name="tpm_disabled_blocks[]" value="<?php print $id; ?>" <?php print $is_checked; ?>>
+              <input
+                type="checkbox"
+                name="tpm_disabled_blocks[]"
+                value="<?php print $id; ?>"
+                <?php print $is_checked; ?>
+                <?php print $is_disabled; ?>>
 
               <?php print $block; ?>
 
               <?php // Only display the block count if the block is actually used. ?>
-              <?php $is_used = ( array_key_exists( $id, $this->inventory ) ) ? true : false; ?>
               <?php if ( $is_used ): ?>
-                <span class="count"> – Used <?php print $this->inventory[$id]['total']; ?> time(s)</span>
+                <span class="count">
+                  – Used <?php print $this->inventory[$id]['total']; ?> time(s)
+                </span>
               <?php endif; ?>
             </label>
+
           <?php endforeach; ?>
         </div>
 

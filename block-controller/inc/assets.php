@@ -40,7 +40,7 @@ class Assets {
     wp_enqueue_script(
       $handle,
       plugins_url( $js, __FILE__ ),
-      [ 'wp-data' ],
+      [ 'wp-data', 'jquery' ],
       filemtime( plugin_dir_path( __FILE__ ) . $js )
     );
   }
@@ -60,7 +60,7 @@ class Assets {
     wp_enqueue_script(
       $handle,
       plugins_url( $js, __FILE__ ),
-      [ 'wp-hooks' ],
+      [ 'wp-hooks', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
       filemtime( plugin_dir_path( __FILE__ ) . $js )
     );
 

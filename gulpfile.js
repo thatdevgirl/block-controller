@@ -15,7 +15,7 @@ const gulp       = require( 'gulp' ),
 
 // Build editor JS files.
 function jsEditorTask( done ) {
-  return browserify( { entries: [ 'block-controller/source/js/disable-blocks.js' ] } )
+  return browserify( { entries: [ 'block-controller/source/js/disable-blocks.js', 'block-controller/source/js/disable-embeds.js' ] } )
     .transform( 'babelify', { presets: [ '@babel/preset-env', '@babel/preset-react' ] } )
     .bundle()
     .pipe( source( 'block-controller-editor.min.js' ) )

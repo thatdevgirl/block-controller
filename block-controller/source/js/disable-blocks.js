@@ -8,14 +8,18 @@
  * a block from the Block Inserter.
  */
 
-const TPMHideBlocks = ( () => {
+const tpmDisableBlocks = ( () => {
 
+  /**
+   * hide()
+   *
+   * Function to hide the current block if it is in the passed-in array of
+   * disabled blocks. The disabled blocks array comes from WP settings, passed
+   * in by the PHP.
+   */
   function hide( settings, name ) {
-    // Only hide the current block if it is in the passed-in array of disabled
-    // blocks. We hide the block by setting the inserter attribute in the
-    // block supports to false. The disabled blocks array comes from WP settings,
-    // which is passed in by the PHP.
     if ( disabledBlocks.includes( name ) ) {
+      // Hide block by setting the inserter attribute in block supports to false.
       return lodash.assign( {}, settings, {
         supports: {
           inserter: false,
@@ -23,16 +27,12 @@ const TPMHideBlocks = ( () => {
       } );
     }
 
-    // If we're at this point, the current block should be included in the block
-    // inserter as is. Just pass back the settings we got.
     return settings;
   };
 
-  // Add this customization to the block.
+  // Call the hide() function on block registration for each block.
   wp.hooks.addFilter( 'blocks.registerBlockType', 'tpmBlockController', hide );
 
 } )();
 
-
-// Run this once the editor (page) is fully loaded.
-document.addEventListener( 'DOMContentLoaded', TPMHideBlocks );
+document.addEventListener( 'DOMContentLoaded', tpmDisableBlocks );

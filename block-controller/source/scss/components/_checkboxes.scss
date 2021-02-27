@@ -29,6 +29,7 @@
     }
   }
 
+
   /*
    * The actual checkboxes.
    */
@@ -54,7 +55,8 @@
     }
 
     // If a checkbox is checked, then that block is disabled.
-    &:checked {
+    &:checked,
+    &[checked='checked'] {
       background-color: $red;
 
       &::after {
@@ -70,16 +72,22 @@
         background-color: darken( $red, 10% );
       }
     }
+
+    // Special styling for disabled checkboxes.
+    &:disabled {
+      background-color: $gray;
+      color: $black;
+      cursor: default;
+
+      &::after {
+        border: 0;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $gray;
+      }
+    }
   }
 
-  .required {
-    @include base_checkbox;
-    // background-color: $gray;
-    // color: $black;
-    // display: inline-block;
-    // font-size: 0.85rem;
-    // margin-right: 0.2rem;
-    // padding-top: 0.2rem;
-    // text-align: center;
-  }
 }

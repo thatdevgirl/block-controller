@@ -2,40 +2,82 @@
  * Event handling for this plugin's settings page.
  */
 
-const $ = jQuery;
+const tpmBlockControllerSettings = ( ($) => {
 
-const tpmBlockControllerSettings = {
+  // Define the form object.
+  const settingsForm = $( '#block-controller-settings' );
 
-  go: function() {
-    // Defined the form object.
-    this.form = $( '#block-controller-settings' );
+  // Define plugin events.
+  $( '.toggle-all-on', settingsForm ).click( toggleAllOn );
+  $( '.toggle-all-off', settingsForm ).click( toggleAllOff );
+  $( 'input[value="core/embed"]' ).click( toggleAllEmbeds );
 
-    // Define this plugin's events.
-    $( '.toggle-all', this.form ).click( this.toggleAll );
-  },
 
   /*
-   * EVENT HANDLER: Toggle all blocks in a given package.
+   * EVENT HANDLER: Turn on all blocks in a given package.
    */
-  toggleAll: function( e ) {
+  function toggleAllOn( e ) {
     e.preventDefault();
 
-    // Get this toggle all button's parent container.
-    const parent = $( e.target ).closest( 'fieldset' );
+    const allItems = getAllItems( e.target );
 
-    // Find any checked items in this package.
-    const checkedItems = $( 'input[type=checkbox]', parent ).attr( 'checked' );
-
-    // If any of the blocks in this package are checked, uncheck all of them.
-    // Otherwise, check all of them.
-    // There is probably a more logical UX-ish way to do this, but this works for now.
-    if ( checkedItems ) {
-      $( 'input[type=checkbox]', parent ).removeAttr( 'checked' );
-    } else {
-      $( 'input[type=checkbox]', parent ).attr( 'checked', 'checked' );
+    for ( let i=0; i<allItems.length; i++ ) {
+      if ( !$( allItems[i] ).attr( 'disabled' ) ) {
+        $( allItems[i] ).prop( 'checked', false );
+      }
     }
   }
 
-};
 
-tpmBlockControllerSettings.go();
+  /*
+   * EVENT HANDLER: Turn off all blocks in a given package.
+   */
+  function toggleAllOff( e ) {
+    e.preventDefault();
+
+    const allItems = getAllItems( e.target );
+
+    for ( let i=0; i<allItems.length; i++ ) {
+      if ( !$( allItems[i] ).attr( 'disabled' ) ) {
+        $( allItems[i] ).prop( 'checked', true );
+      }
+    }
+  }
+
+
+  /*
+   * EVENT HANDLER: Core embed switch.
+   *
+   * The core embed switch is special, because if that block is turned off,
+   * all of the rest of the embed variations are turned off. So, we should
+   * reflect this in the settings form.
+   */
+  function toggleAllEmbeds( e ) {
+    const allItems = getAllItems( e.target );
+
+    // Only check all of the embed variations if the core embed block is checked.
+    if ( $(e.target).prop( 'checked' ) ) {
+      for ( let i=0; i<allItems.length; i++ ) {
+        if ( !$( allItems[i] ).attr( 'disabled' ) ) {
+          $( allItems[i] ).prop( 'checked', true );
+        }
+      }
+    }
+  }
+
+
+  /**
+   * HELPER: Get all items included in the passed-in item's package.
+   */
+  function getAllItems( el ) {
+    // Get element's parent container.
+    const parent = $( el ).closest( 'fieldset' );
+
+    // Return any checked items in this package.
+    return  $( 'input[type=checkbox]', parent );
+  }
+
+} )( jQuery );
+
+
+tpmBlockControllerSettings;

@@ -55,12 +55,12 @@ class Settings {
 
     // Submenu page for the block audit listing.
     add_submenu_page(
-      'block_controller',         // parent slug
-      'Block Audit',              // page title
-      'Block Audit',              // menu title
-      'manage_options',           // capability - for admins only
-      'block_controller_audit',   // slug
-      [ $this, 'callback_audit' ] // callback
+      'block_controller',             // parent slug
+      'Block Inventory',              // page title
+      'Block Inventory',              // menu title
+      'manage_options',               // capability - for admins only
+      'block_controller_audit',       // slug
+      [ $this, 'callback_inventory' ] // callback
     );
   }
 
@@ -78,14 +78,14 @@ class Settings {
 
 
   /**
-   * callback_audit()
+   * callback_inventory()
    *
    * Callback to display the block audit settings page.
    *
    * @return void
    */
-  public function callback_audit(): void {
-    require_once( 'templates/settings-audit.inc.php' );
+  public function callback_inventory(): void {
+    require_once( 'templates/settings-inventory.php' );
   }
 
 

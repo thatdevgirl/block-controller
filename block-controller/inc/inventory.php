@@ -2,7 +2,7 @@
 /**
  * Inventory.
  *
- * Class to get an inventory of how often each block is used on the site.
+ * This class gets an inventory of how often each block is used on the site.
  */
 
 namespace ThreePM\BlockController;

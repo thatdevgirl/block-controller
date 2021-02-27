@@ -50,10 +50,18 @@
 
     // Counter text for blocks that exist at least once on the site.
     .count {
-      color: $red;
       display: inline-block;
       font-size: 0.75rem;
       margin-left: 0.5rem;
+
+      a {
+        color: $red;
+
+        &:focus,
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }

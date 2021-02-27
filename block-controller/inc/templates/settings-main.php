@@ -61,6 +61,10 @@
               // If the item is being used in any post, we want to set the
               // "disabled" attribute on the checkbox.
               $is_disabled = $is_used ? 'disabled' : '';
+
+              // Create a HTML-friendly version of the block ID to use as an
+              // anchor link target.
+              $anchor_id = str_replace( '/', '-', $id );
             ?>
 
             <label>
@@ -76,7 +80,10 @@
               <?php // Only display the block count if the block is actually used. ?>
               <?php if ( $is_used ): ?>
                 <span class="count">
-                  – Used <?php print $this->inventory[$id]['total']; ?> time(s)
+                  –
+                  <a href="admin.php?page=block_controller_audit#<?php print $anchor_id; ?>">
+                    Used <?php print $this->inventory[$id]['total']; ?> time(s)
+                  </a>
                 </span>
               <?php endif; ?>
             </label>

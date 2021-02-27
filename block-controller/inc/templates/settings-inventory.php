@@ -6,7 +6,7 @@
    */
 ?>
 
-<?php require_once( 'heading.inc.php' ); ?>
+<h1 class="block-controller-heading">Block Inventory</h1>
 
 <div class="wrap">
   <p>
@@ -19,11 +19,11 @@
   <?php foreach( $this->inventory as $block_id => $inventory ): ?>
     <?php $id = str_replace( '/', '-', $block_id ); ?>
 
-    <section class="block-controller-package" aria-labelledby="<?php echo $id; ?>">
+    <div class="block-controller-package" id="<?php echo $id; ?>">
 
       <?php // Print out the block name as the section header. ?>
-      <div class="heading" name="#<?php echo $id; ?>">
-        <h2 id="<?php echo $id; ?>">
+      <div class="heading">
+        <h2>
           <?php // If the plugin recognizes the block, use its name here. ?>
           <?php if ( array_key_exists( $block_id, $this->all_blocks ) ): ?>
             <?php print $this->all_blocks[$block_id]; ?>
@@ -41,7 +41,7 @@
       </div>
 
       <?php // List out all of the posts that use this block. ?>
-      <div class="options post-list">
+      <div class="post-list">
         <p>
           This block is used <?php print $inventory['total']; ?> time(s) across
           all of the posts listed below.
@@ -68,6 +68,6 @@
         </ul>
       </div>
 
-    </section>
+    </div>
   <?php endforeach; ?>
 </div>

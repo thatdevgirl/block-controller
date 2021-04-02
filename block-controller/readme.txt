@@ -1,6 +1,6 @@
 === Block Controller ===
 Contributors: thatdevgirl
-Donate Link: https://www.paypal.me/thatdevgirl
+Donate Link: https://www.buymeacoffee.com/thatdevgirl
 Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0

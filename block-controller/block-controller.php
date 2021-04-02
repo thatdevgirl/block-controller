@@ -16,5 +16,6 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 require_once( 'inc/assets.php' );
+require_once( 'inc/plugins-page.php' );
 require_once( 'inc/settings.php' );
 require_once( 'inc/inventory.php' );

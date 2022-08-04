@@ -24,12 +24,11 @@ class Settings {
   public function __construct() {
     add_action( 'admin_menu', [ $this, 'set_menu' ] );
     add_action( 'admin_init', [ $this, 'register_settings' ] );
+    add_action( 'init', [ $this, 'get_inventory' ] );
 
-    // Get the supported block packages and inventory.
+    // Get the supported block packages.
     $block_packages = new Packages;
-    $inventory = new Inventory;
     $this->packages = $block_packages->get_packages();
-    $this->inventory = $inventory->get_inventory();
     $this->all_blocks = $block_packages->get_all_blocks();
   }
 
@@ -98,6 +97,19 @@ class Settings {
    */
   public function register_settings(): void {
     register_setting( 'tpm_block_group', 'tpm_disabled_blocks' );
+  }
+
+
+  /**
+   * get_inventory()
+   * 
+   * Get the inventory of all blocks and where they are used.
+   * 
+   * @return void
+   */
+  public function get_inventory(): void {
+    $inventory = new Inventory;
+    $this->inventory = $inventory->get_inventory();
   }
 
 }

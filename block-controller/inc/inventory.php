@@ -21,10 +21,10 @@ class Inventory {
     $inventory = [];
 
     // Get all of the posts in the site.
-    $posts = $this->get_all_posts();
+    $this->get_all_posts();
 
     // Loop through all of the posts on the site.
-    foreach ( $posts as $post ) {
+    foreach ( $this->posts as $post ) {
       // Get all of the blocks used in that post.
       $blocks = parse_blocks( $post->post_content );
 
@@ -72,16 +72,16 @@ class Inventory {
    *
    * @return array
    */
-  private function get_all_posts(): array {
+  private function get_all_posts() {
     // Arguments to get all posts and pages.
     $args = array(
       'numberposts' => -1, // Get all posts
       'post_status' => 'any', // Get any post that is not in the trash
       'post_type'   => array( 'post', 'page' ) // Get page and post posts
     );
-
-    // Return an array of post objects.
-    return get_posts( $args );
+    
+    // Otherwise, go ahead and get the posts.
+    $this->posts = get_posts( $args );
   }
 
 }

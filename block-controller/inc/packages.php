@@ -122,7 +122,11 @@ class Packages {
    * @return array
    */
   public function get_all_blocks(): array {
-    return call_user_func_array( 'array_merge', $this->get_packages() );
+    // Merge all of the package arrays, but use `array_values` to strip away
+    // the array keys because, otherwise, `call_user_func_array` will interpret 
+    // the top-level array keys as parameter names to be passed into the 
+    // `array_merge` and that causes problems.
+    return call_user_func_array( 'array_merge', array_values( $this->get_packages() ) );
   }
 
 }

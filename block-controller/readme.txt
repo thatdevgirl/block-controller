@@ -5,7 +5,7 @@ Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 6.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 
 Turn on and off specific post editor content blocks.
 
@@ -34,6 +34,9 @@ This WordPress plugin provides site administrators with the ability to turn on a
 2. Screenshot of the block audit page, where administrators can see a list of all blocks used across the site.
 
 == Changelog ==
+
+= 1.1.3 =
+* Fixing a fatal PHP bug that was discovered in PHP 8, where the array_merge to combine all blocks across all packages into a single array fails because the keys are also passed to the array_merge function.
 
 = 1.1.2 =
 * Fixing a potential fatal PHP bug in getting the block inventory, where the `is_user_logged_in()` function may not be defined when the inventory function makes the call to get all posts.

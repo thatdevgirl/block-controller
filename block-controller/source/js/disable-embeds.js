@@ -13,8 +13,8 @@
 
 wp.domReady( () => {
 
-  if ( !disabledBlocks.includes( 'core/embed' ) ) {
-    disabledBlocks.forEach( (block) => {
+  if ( !TPM_BC_GLOBAL.disabledBlocks.includes( 'core/embed' ) ) {
+    TPM_BC_GLOBAL.disabledBlocks.forEach( (block) => {
       const blockName = block.split('/');
 
       if ( blockName[0] == 'core-embed' ) {

@@ -45,6 +45,31 @@ class Packages {
       'core/spacer'          => 'Spacer'
     ],
 
+    'Theme' => [
+      'core/avatar'                => 'Avatar',
+      'core/comments'              => 'Comments',
+      'core/loginout'              => 'Login/out',
+      'core/navigation'            => 'Navigation',
+      'core/page-list'             => 'Page List',
+      'core/post-author'           => 'Post Author',
+      'core/post-author-biography' => 'Post Author Biography',
+      'core/post-comments-form'    => 'Post Comments Form',
+      'core/post-content'          => 'Post Content',
+      'core/post-date'             => 'Post Date',
+      'core/post-excerpt'          => 'Post Excerpt',
+      'core/post-featured-image'   => 'Post Featured Image',
+      'core/post-navigation-link'  => 'Post Navigation Link',
+      'core/post-terms'            => 'Post Terms',
+      'core/post-title'            => 'Post Title',
+      'core/query'                 => 'Query',
+      'core/query-title'           => 'Query Title',
+      'core/read-more'             => 'Read More',
+      'core/site-logo'             => 'Site Logo',
+      'core/site-tagline'          => 'Site Tag Line',
+      'core/site-title'            => 'Site Title',
+      'core/term-description'      => 'Term Description'
+    ],
+
     'Widgets' => [
       'core/archives'        => 'Archives',
       'core/calendar'        => 'Calendar',
@@ -76,6 +101,7 @@ class Packages {
       'core-embed/kickstarter'   => 'Kickstarter',
       'core-embed/meetup-com'    => 'Meetup.com',
       'core-embed/mixcloud'      => 'Mixcloud',
+      'core-embed/pinterest'     => 'Pinterest',
       'core-embed/polldaddy'     => 'Polldaddy',
       'core-embed/reddit'        => 'Reddit',
       'core-embed/reverbnation'  => 'ReverbNation',
@@ -93,6 +119,7 @@ class Packages {
       'core-embed/twitter'       => 'Twitter',
       'core-embed/videopress'    => 'VideoPress',
       'core-embed/vimeo'         => 'Vimeo',
+      'core-embed/wolfram-cloud' => 'Wolfram',
       'core-embed/wordpress'     => 'WordPress',
       'core-embed/wordpress-tv'  => 'WordPress.tv',
       'core-embed/youtube'       => 'YouTube',

@@ -18,7 +18,7 @@ const tpmDisableBlocks = ( () => {
    * in by the PHP.
    */
   function hide( settings, name ) {
-    if ( disabledBlocks.includes( name ) ) {
+    if ( TPM_BC_GLOBAL.disabledBlocks.includes( name ) ) {
       // Hide block by setting the inserter attribute in block supports to false.
       return lodash.assign( {}, settings, {
         supports: {

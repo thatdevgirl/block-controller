@@ -9,6 +9,10 @@ namespace ThreePM\BlockController;
 
 class Assets {
 
+  private const HANDLE_ADMIN = 'tpm-block-controller-admin';
+  private const HANDLE_EDITOR = 'tpm-block-controller-editor';
+
+
   /**
    * __construct()
    */
@@ -26,19 +30,18 @@ class Assets {
    * @return void
    */
   public function set_admin_assets(): void {
-    $handle = 'tpm-block-controller-admin';
     $css = '../build/block-controller.css';
     $js = '../build/block-controller-admin.min.js';
 
     wp_enqueue_style(
-      $handle,
+      self::HANDLE_ADMIN,
       plugins_url( $css, __FILE__ ),
       [],
       filemtime( plugin_dir_path( __FILE__ ) . $css )
     );
 
     wp_enqueue_script(
-      $handle,
+      self::HANDLE_ADMIN,
       plugins_url( $js, __FILE__ ),
       [ 'wp-data', 'jquery' ],
       filemtime( plugin_dir_path( __FILE__ ) . $js )
@@ -54,18 +57,23 @@ class Assets {
    * @return void
    */
   public function set_editor_assets(): void {
-    $handle = 'tpm-block-controller-editor';
     $js = '../build/block-controller-editor.min.js';
 
     wp_enqueue_script(
-      $handle,
+      self::HANDLE_EDITOR,
       plugins_url( $js, __FILE__ ),
       [ 'wp-hooks', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ],
       filemtime( plugin_dir_path( __FILE__ ) . $js )
     );
 
-    // Send list of blocks to disable to the JS for it to handle.
-    wp_localize_script( $handle, 'disabledBlocks', $this->get_disabled_blocks() );
+    // Get global data to pass to the JS.
+    wp_add_inline_script( 
+      self::HANDLE_EDITOR, 
+      'const TPM_BC_GLOBAL = ' . json_encode([
+        'disabledBlocks' => $this->get_disabled_blocks()
+      ]), 
+      'before'
+    );
   }
 
 

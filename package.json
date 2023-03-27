@@ -1,7 +1,7 @@
 {
   "name": "threepm-block-controller",
   "version": "1.1.0",
-  "description": "ThreePM Block Controller build scripts",
+  "description": "Block Controller build scripts",
   "main": "gulpfile.js",
   "repository": "github:thatdevgirl/block-controller.git",
   "author": "Joni Halabi",

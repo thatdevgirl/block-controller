@@ -53,6 +53,7 @@ class Packages {
       'core/page-list'             => 'Page List',
       'core/post-author'           => 'Post Author',
       'core/post-author-biography' => 'Post Author Biography',
+      'core/post-author-name'      => 'Post Author Name',
       'core/post-comments-form'    => 'Post Comments Form',
       'core/post-content'          => 'Post Content',
       'core/post-date'             => 'Post Date',

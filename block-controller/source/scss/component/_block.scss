@@ -1,19 +1,20 @@
 /**
- * Container for an individual block package.
+ * An individual block displayed on the details page.
  */
 
-.block-controller-package {
+.block-controller-block {
   background: $white;
   border: 1px solid $gray;
   border-radius: 0.15rem;
   box-shadow: $gray 0 1px;
   margin: 2rem 0;
 
+
   /*
-   * Section heading.
+   * Heading.
    */
 
-  .heading {
+  &-heading {
     border-bottom: 1px solid $gray;
     padding: 0.5rem 1rem;
     position: relative;
@@ -28,11 +29,12 @@
     }
   }
 
+
   /*
    * Block of options.
    */
 
-  .options {
+  &-options {
     padding: 2rem 1rem;
 
     p {
@@ -64,4 +66,5 @@
       }
     }
   }
+
 }

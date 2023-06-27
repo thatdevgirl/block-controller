@@ -5,9 +5,9 @@ Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 6.2
-Stable tag: 1.2
+Stable tag: 1.3
 
-Turn on and off specific post editor content blocks.
+Allow site administrators to control editor access to content blocks.
 
 == Description ==
 
@@ -34,6 +34,13 @@ This WordPress plugin provides site administrators with the ability to turn on a
 2. Screenshot of the block audit page, where administrators can see a list of all blocks used across the site.
 
 == Changelog ==
+
+= 1.3 =
+* Added a block summary view to display a simple table that lists all of the blocks used on the site, along with the number of instances of each block and the number of pages each block appears on.
+* Renamed the "Block Inventory" pages to "Block Usage".
+* Made the "Block Usage" page more robust. The page by default will list all pages, but if it is navigated to from an individual block link on either the main settings page or the usage summary page, it will display information for just that one block.
+* [FIX] Fixed a fatal JavaScript error on multisites, where the post editor fails to load, resulting in a "white screen of death".
+* [TECH DEBT] Minor code refactoring and adding additional, inline comments.
 
 = 1.2 =
 * Replacing `wp_localize_script` with `wp_add_inline_script` to pass PHP data to the JavaScript. This better adheres to WordPress standards.

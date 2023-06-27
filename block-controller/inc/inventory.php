@@ -68,11 +68,12 @@ class Inventory {
   /**
    * get_all_posts()
    *
-   * Get all posts, so we can inventory them for blocks.
+   * Get all posts, so we can inventory them for blocks. The posts are saved
+   * as a variable in the class.
    *
-   * @return array
+   * @return void
    */
-  private function get_all_posts() {
+  private function get_all_posts(): void {
     // Arguments to get all posts and pages.
     $args = array(
       'numberposts' => -1, // Get all posts

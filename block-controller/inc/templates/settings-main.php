@@ -1,12 +1,13 @@
 <?php
   /**
-   * Template for the plugin main settings page.
-   *   This template lists all blocks supported by this plugin and displays
-   *   a form that administrators can use to enable and disable blocks.
+   * TEMPLATE: Main Settings Page
+   * 
+   * This template lists all blocks supported by this plugin and displays
+   * a form that site administrators can use to enable and disable these blocks.
    */
 ?>
 
-<?php $disabled_blocks = maybe_unserialize( get_option( 'tpm_disabled_blocks' ) ); ?>
+<?php $disabled_blocks = maybe_unserialize( get_site_option( 'tpm_disabled_blocks' ) ); ?>
 
 <h1 class="block-controller-heading">Block Controller</h1>
 
@@ -32,46 +33,44 @@
 
     <?php // Iterate over each PACKAGE. ?>
     <?php foreach( $this->packages as $package_label => $blocks ): ?>
-      <fieldset class="block-controller-package">
+      <fieldset class="block-controller-block block-controller-package">
 
-
-        <div class="heading">
+        <div class="block-controller-block-heading">
           <legend><?php print $package_label; ?></legend>
           <button class="toggle-all-on" aria-label="Turn on all <?php print $package_label; ?> blocks">All On</button>
           <button class="toggle-all-off" aria-label="Turn off all <?php print $package_label; ?> blocks">All Off</button>
         </div>
 
 
-        <div class="options">
+        <div class="block-controller-block-options">
 
           <?php
             // Iterate over each BLOCK in the current package.
-            foreach( $blocks as $id => $block ):
+            foreach( $blocks as $block_id => $block ):
               // Check to see if this item is selected. If it is, we want to set
               // the "checked" attribute on the checkbox.
               if ( is_array( $disabled_blocks ) ) {
-                $is_checked = in_array( $id, $disabled_blocks ) ? 'checked' : '';
+                $is_checked = in_array( $block_id, $disabled_blocks ) ? 'checked' : '';
               } else {
                 $is_checked = '';
               }
 
               // Check to see if this item is being used in any post.
-              $is_used = ( array_key_exists( $id, $this->inventory ) ) ? true : false;
+              $is_used = ( array_key_exists( $block_id, $this->inventory ) ) ? true : false;
 
               // If the item is being used in any post, we want to set the
               // "disabled" attribute on the checkbox.
               $is_disabled = $is_used ? 'disabled' : '';
 
-              // Create a HTML-friendly version of the block ID to use as an
-              // anchor link target.
-              $anchor_id = str_replace( '/', '-', $id );
+              // Translate the block ID into a URL friendly string.
+              $block_id_encoded = htmlentities( $block_id );
             ?>
 
             <label>
               <input
                 type="checkbox"
                 name="tpm_disabled_blocks[]"
-                value="<?php print $id; ?>"
+                value="<?php print $block_id; ?>"
                 <?php print $is_checked; ?>
                 <?php print $is_disabled; ?>>
 
@@ -81,8 +80,8 @@
               <?php if ( $is_used ): ?>
                 <span class="count">
                   –
-                  <a href="admin.php?page=block_controller_audit#<?php print $anchor_id; ?>">
-                    Used <?php print $this->inventory[$id]['total']; ?> time(s)
+                  <a href="admin.php?page=block_controller_details&block=<?php print $block_id_encoded; ?>">
+                    Used <?php print $this->inventory[$block_id]['total']; ?> time(s)
                   </a>
                 </span>
               <?php endif; ?>

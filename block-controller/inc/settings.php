@@ -52,15 +52,27 @@ class Settings {
       61                          // menu position
     );
 
-    // Submenu page for the block audit listing.
+    // Submenu page for the block inventory summary.
     add_submenu_page(
       'block_controller',             // parent slug
-      'Block Inventory',              // page title
-      'Block Inventory',              // menu title
+      'Block Usage Summary',          // page title
+      'Usage Summary',                // menu title
       'manage_options',               // capability - for admins only
-      'block_controller_audit',       // slug
-      [ $this, 'callback_inventory' ] // callback
+      'block_controller_summary',     // slug
+      [ $this, 'callback_summary' ]   // callback
     );
+
+    // Submenu page for the block inventory summary.
+    add_submenu_page(
+      'block_controller',             // parent slug
+      'Block Usage Details',          // page title
+      'Usage Details',                // menu title
+      'manage_options',               // capability - for admins only
+      'block_controller_details',     // slug
+      [ $this, 'callback_details' ]   // callback
+    );
+
+    
   }
 
 
@@ -77,14 +89,26 @@ class Settings {
 
 
   /**
-   * callback_inventory()
+   * callback_summary()
    *
-   * Callback to display the block audit settings page.
+   * Callback to display the block usage summary page.
    *
    * @return void
    */
-  public function callback_inventory(): void {
-    require_once( 'templates/settings-inventory.php' );
+  public function callback_summary(): void {
+    require_once( 'templates/settings-usage-summary.php' );
+  }
+
+  
+  /**
+   * callback_details()
+   *
+   * Callback to display the block usage details page.
+   *
+   * @return void
+   */
+  public function callback_details(): void {
+    require_once( 'templates/settings-usage-details.php' );
   }
 
 

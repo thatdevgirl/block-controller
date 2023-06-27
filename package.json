@@ -7,7 +7,7 @@
   "author": "Joni Halabi",
   "devDependencies": {
     "@babel/core": "7.19.*",
-    "@babel/preset-env": "7.19.*",
+    "@babel/preset-env": "7.22.*",
     "@babel/preset-react": "7.18.*",
     "babel-preset-minify": "0.5.*",
     "babelify": "10.0.*",

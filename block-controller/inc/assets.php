@@ -82,11 +82,20 @@ class Assets {
    *
    * Get the list of disabled blocks from settings.
    *
-   * @return string|null
+   * @return string
    */
-  private function get_disabled_blocks() {
-    return maybe_unserialize( get_option( 'tpm_disabled_blocks' ) );
-  }
+  private function get_disabled_blocks(): string {
+    // Get the disabled block list from site options.
+    $disabled_blocks = get_site_option( 'tpm_disabled_blocks' );
+
+    // If there are disabled blocks, return that list as a string. Otherwise
+    // return an empty string.
+    if ( $disabled_blocks ) {
+      return maybe_unserialize( get_site_option( 'tpm_disabled_blocks' ) );
+    } else {
+      return '';
+    }
+}
 
 };
 

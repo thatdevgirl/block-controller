@@ -24,9 +24,10 @@ class PluginsPage {
    *
    * @param array $links
    * @param string $plugin_file_name
+   * 
    * @return array
    */
-  public function add_row_meta( $links, $plugin_file_name ) {
+  public function add_row_meta( array $links, string $plugin_file_name ): array {
     $additional_links = [];
 
     if ( strpos( $plugin_file_name, 'block-controller' ) !== false ) {

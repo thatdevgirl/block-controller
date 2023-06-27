@@ -2,10 +2,18 @@
  * Styles for the Block Controller settings page.
  */
 
+// Global variables
 @import 'global/colors';
 
-@import 'components/buttons';
-@import 'components/checkboxes';
-@import 'components/heading';
-@import 'components/package';
-@import 'components/post-list';
+// Base elements
+@import 'base/button';
+@import 'base/checkbox';
+@import 'base/heading';
+@import 'base/paragraph';
+@import 'base/pre';
+@import 'base/table';
+
+// Components
+@import 'component/block';
+@import 'component/details-nav';
+@import 'component/post-list';

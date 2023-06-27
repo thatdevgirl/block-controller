@@ -25,13 +25,17 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 5. Some blocks will not be able to be disabled because they are already used by at least one post or page on the site. You can only disable blocks that are not currently in use. If a block is in use by at least one post, the number of uses will be listed next to that block, along with a link to the block audit page.
 
-6. Go to the Block Audit page (under `Block Controller -> Block Audit`) to see a list of all blocks used across the site, as well as their associated posts.
+6. Go to the Usage Summary page (under `Block Controller -> Block Usage Summary`) to see a list of all blocks used across the site, as well as their associated posts.
 
 == Screenshots ==
 
-1. Screenshot of the main settings page, where administrators can enable and disable blocks.
+1. The main settings page, where site administrators can enable and disable blocks. This page highlights blocks that are already in use.
 
-2. Screenshot of the block audit page, where administrators can see a list of all blocks used across the site.
+2. The block usage summary page, which displays a quick view of the blocks used on the site. This page enumerates the number of instances of each block throughout the site and the number of pages each block is used on.
+
+3. The block usage details page for all blocks. This page display all blocks used throughout the site and a linked list of the pages each block is used on.
+
+4. The block usage details page for a single block. This page is similar to the details page for all blocks, but includes only the information for a single block.
 
 == Changelog ==
 

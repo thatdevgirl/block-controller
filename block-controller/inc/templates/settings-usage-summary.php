@@ -7,7 +7,7 @@
    */
 ?>
 
-<h1 class="block-controller-heading">Block Usage Details</h1>
+<h1 class="block-controller-heading">Block Usage Summary</h1>
 
 <div class="wrap">
   <p class="block-controller-paragraph">

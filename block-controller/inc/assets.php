@@ -82,9 +82,9 @@ class Assets {
    *
    * Get the list of disabled blocks from settings.
    *
-   * @return string
+   * @return mixed
    */
-  private function get_disabled_blocks(): string {
+  private function get_disabled_blocks() {
     // Get the disabled block list from site options.
     $disabled_blocks = get_site_option( 'tpm_disabled_blocks' );
 

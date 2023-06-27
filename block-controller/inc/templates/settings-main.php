@@ -16,14 +16,6 @@
     Use this page to enable and disable blocks for all post types.
   </p>
 
-  <p>
-    <b>Blocks in use:</b> You may disable blocks that are currently used by a
-    post or page. The blocks already on that page will remain. However, please
-    note that you will not be able to add any new blocks of that type, nor
-    will you be able to re-add that block if you delete the existing block.
-    Blocks that are in use already will indicate how many times they are used.
-  </p>
-
   <form method="post" action="options.php" id="block-controller-settings">
     <?php
       // Display hidden form fields.

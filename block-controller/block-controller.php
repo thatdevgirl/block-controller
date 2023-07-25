@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Block Controller
  * Description: Allow site administrators to control editor access to content blocks.
- * Version: 1.3
+ * Version: 1.4
  * Author: Joni Halabi
  * Author URI: https://jhalabi.com
  * License: GPL2
@@ -18,4 +18,3 @@ if ( !defined( 'ABSPATH' ) ) {
 require_once( 'inc/assets.php' );
 require_once( 'inc/plugins-page.php' );
 require_once( 'inc/settings.php' );
-require_once( 'inc/inventory.php' );

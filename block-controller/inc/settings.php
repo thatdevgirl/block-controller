@@ -96,6 +96,7 @@ class Settings {
    * @return void
    */
   public function callback_summary(): void {
+    require_once( 'usage-summary-table.php' );
     require_once( 'templates/settings-usage-summary.php' );
   }
 

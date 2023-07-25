@@ -5,7 +5,7 @@ Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 6.3
-Stable tag: 1.3
+Stable tag: 1.4
 
 Allow site administrators to control editor access to content blocks.
 
@@ -25,7 +25,7 @@ This WordPress plugin provides site administrators with the ability to turn on a
 
 5. Some blocks will not be able to be disabled because they are already used by at least one post or page on the site. You can only disable blocks that are not currently in use. If a block is in use by at least one post, the number of uses will be listed next to that block, along with a link to the block audit page.
 
-6. Go to the Usage Summary page (under `Block Controller -> Block Usage Summary`) to see a list of all blocks used across the site, as well as their associated posts.
+6. Go to the Usage Summary page (under `Block Controller -> Usage Summary`) to see a list of all blocks used across the site, as well as their associated posts.
 
 == Screenshots ==
 
@@ -38,6 +38,9 @@ This WordPress plugin provides site administrators with the ability to turn on a
 4. The block usage details page for a single block. This page is similar to the details page for all blocks, but includes only the information for a single block.
 
 == Changelog ==
+
+= 1.4 =
+* Updated the block usage summary page to use the core WP Table, which adds sorting functionality to the page and block count columns.
 
 = 1.3 =
 * Added a block summary view to display a simple table that lists all of the blocks used on the site, along with the number of instances of each block and the number of pages each block appears on.

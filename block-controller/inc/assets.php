@@ -85,15 +85,16 @@ class Assets {
    * @return mixed
    */
   private function get_disabled_blocks() {
-    // Get the disabled block list from site options.
+    // Get the disabled block list from site options. This will be a 
+    // serialized list, saved to the database as a string.
     $disabled_blocks = get_site_option( 'tpm_disabled_blocks' );
 
-    // If there are disabled blocks, return that list as a string. Otherwise
-    // return an empty string.
+    // If there are disabled blocks, return that list as an array. Otherwise
+    // return an empty array.
     if ( $disabled_blocks ) {
-      return maybe_unserialize( get_site_option( 'tpm_disabled_blocks' ) );
+      return maybe_unserialize( $disabled_blocks );
     } else {
-      return '';
+      return [];
     }
 }
 

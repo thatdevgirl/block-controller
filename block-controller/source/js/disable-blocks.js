@@ -8,6 +8,8 @@
  * a block from the Block Inserter.
  */
 
+import { assign } from 'lodash';
+
 const tpmDisableBlocks = ( () => {
 
   /**
@@ -20,7 +22,7 @@ const tpmDisableBlocks = ( () => {
   function hide( settings, name ) {
     if ( TPM_BC_GLOBAL.disabledBlocks.includes( name ) ) {
       // Hide block by setting the inserter attribute in block supports to false.
-      return lodash.assign( {}, settings, {
+      return assign( {}, settings, {
         supports: {
           inserter: false,
         },

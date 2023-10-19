@@ -15,6 +15,8 @@ class Packages {
     'Text' => [
       'core/freeform'        => 'Classic',
       'core/code'            => 'Code',
+      'core/details'         => 'Details',
+      'core/footnotes'       => 'Footnotes',
       'core/heading'         => 'Heading',
       'core/list'            => 'List',
       'core/paragraph'       => 'Paragraph',
@@ -61,6 +63,7 @@ class Packages {
       'core/post-featured-image'   => 'Post Featured Image',
       'core/post-navigation-link'  => 'Post Navigation Link',
       'core/post-terms'            => 'Post Terms',
+      'core/post-time-to-read'     => 'Post Time To Read',
       'core/post-title'            => 'Post Title',
       'core/query'                 => 'Query',
       'core/query-title'           => 'Query Title',

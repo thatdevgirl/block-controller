@@ -4,8 +4,8 @@ Donate Link: https://www.buymeacoffee.com/thatdevgirl
 Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 6.4
-Stable tag: 1.4.1
+Tested up to: 6.5
+Stable tag: 1.4.2
 
 Allow site administrators to control editor access to content blocks.
 
@@ -38,6 +38,10 @@ This WordPress plugin provides site administrators with the ability to turn on a
 4. The block usage details page for a single block. This page is similar to the details page for all blocks, but includes only the information for a single block.
 
 == Changelog ==
+
+= 1.4.2 =
+* Tested with WordPress 6.5
+* Refactored plugin styles
 
 = 1.4.1 = 
 * Tested with WordPress 6.4.

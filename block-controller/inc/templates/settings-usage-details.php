@@ -26,14 +26,17 @@
 </h1>
 
 <div class="wrap">
-  <p>
+  <p class="block-controller-paragraph">
     A detailed view about blocks used on this site. The posts and pages on which
     the block appears are listed below the block's name. Please remember that a
     block may be used multiple times on a single page.
   </p>
 
-  <?php // If we are highlighted a block, add links to go back to the summary ?>
-  <?php // view and the details view for all blocks. ?>
+  <?php 
+    // If we are displaying details about a single, specific block (i.e.
+    // a highlighted block), add links to go back to the summary
+    // view and the details view for all blocks. 
+  ?>
   <?php if ( $highlighted_block ): ?>
     <nav class="block-controller-details-nav" aria-label="Options to get more block information">
       <p>More information:</p>
@@ -83,7 +86,7 @@
         // the block appears.
       ?>
       <div class="block-controller-post-list">
-        <p>
+        <p class="block-controller-paragraph">
           This block is used <b><?php print $inventory['total']; ?></b> time(s)
           across <b><?php print count($inventory['posts']); ?></b> page(s).
         </p>
@@ -92,7 +95,7 @@
           <?php // Loop through each of the posts associated with this block. ?>
           <?php foreach ( $inventory['posts'] as $post ): ?>
 
-            <li>
+            <li class="block-controller-paragraph">
               <?php // Link to the post's edit page. ?>
               <a href="<?php echo get_edit_post_link( $post ); ?>">
                 <?php

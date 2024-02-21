@@ -3,17 +3,18 @@
  */
 
 // Global variables
-@import 'global/colors';
+@import '00-global/colors';
+@import '00-global/fonts';
 
 // Base elements
-@import 'base/button';
-@import 'base/checkbox';
-@import 'base/heading';
-@import 'base/paragraph';
-@import 'base/pre';
-@import 'base/table';
+@import '01-tags/button';
+@import '01-tags/checkbox';
+@import '01-tags/heading';
+@import '01-tags/paragraph';
+@import '01-tags/pre';
+@import '01-tags/table';
 
 // Components
-@import 'component/block';
-@import 'component/details-nav';
-@import 'component/post-list';
+@import '02-components/block';
+@import '02-components/details-nav';
+@import '02-components/post-list';

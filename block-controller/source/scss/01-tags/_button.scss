@@ -1,40 +1,42 @@
 /**
- * Button
+ * Tags: Button
  * 
  * Button styles, used on the plugin settings pages.
  */
 
-// Submit.
 #block-controller-settings {
+
+  // Submit button.
   input[type='submit'] {
-    background-color: $blue;
-    border-color: $blue;
+    background-color: var(--bc-blue);
+    border-color: var(--bc-blue);
     border-radius: 0.1rem;
     padding: 0.25rem 0.75rem;
 
     &:hover,
     &:focus {
-      background-color: darken( $blue, 10% );
+      background-color: var(--bc-blue-darker);
     }
   }
 }
+
 
 // Toggle all.
 .block-controller-package {
   .toggle-all-on,
   .toggle-all-off {
-    background-color: $blue;
+    background-color: var(--bc-blue);
     border: 0;
-    color: $white;
+    color: var(--bc-white);
     cursor: pointer;
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1.1rem;
     position: absolute;
     right: 0;
     top: 0;
 
     &:hover,
     &:focus {
-      background-color: darken( $blue, 10% );
+      background-color: var(--bc-blue-darker);
     }
   }
 

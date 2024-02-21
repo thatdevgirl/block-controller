@@ -1,8 +1,9 @@
 /**
- * Details navigation
+ * Components: Details navigation
  */
 
 .block-controller-details-nav {
+
   p {
     display: inline-block;
     font-weight: bold;
@@ -13,12 +14,12 @@
   }
 
   li {
-    border-left: 1px solid $black;
+    border-inline-start: 1px solid var(--bc-black);
     display: inline;
     padding-inline: 0.5rem;
 
     &:first-child {
-      border-left: 0;
+      border-inline-start: 0;
     }
   }
 }

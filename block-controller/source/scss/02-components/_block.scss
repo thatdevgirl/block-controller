@@ -1,13 +1,16 @@
 /**
+ * Components: Block
+ *
  * An individual block displayed on the details page.
  */
 
 .block-controller-block {
-  background: $white;
-  border: 1px solid $gray;
+
+  background: var(--bc-white);
+  border: 1px solid var(--bc-gray);
   border-radius: 0.15rem;
-  box-shadow: $gray 0 1px;
-  margin: 2rem 0;
+  box-shadow: var(--bc-gray) 0 1px;
+  margin-block: 2rem;
 
 
   /*
@@ -15,17 +18,17 @@
    */
 
   &-heading {
-    border-bottom: 1px solid $gray;
-    padding: 0.5rem 1rem;
+    border-block-end: 1px solid var(--bc-gray);
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
     position: relative;
 
     // Heading text.
     legend,
     h2 {
-      font-size: 1rem;
+      font-size: var(--bc-font-size-h2);
       font-weight: normal;
-      margin-bottom: 0;
-      margin-top: 0;
+      margin-block: 0.2rem;
     }
   }
 
@@ -35,29 +38,30 @@
    */
 
   &-options {
-    padding: 2rem 1rem;
+    padding-block: 2rem;
+    padding-inline: 1rem;
 
     p {
-      margin-bottom: 1.5rem;
-      margin-top: 0;
+      margin-block-end: 1.5rem;
+      margin-block-start: 0;
     }
 
     // Label for an individual block.
     label {
       cursor: default;
       display: block;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
+      font-size: var(--bc-font-size-p-smaller);
+      margin-block-end: 1.2rem;
     }
 
     // Counter text for blocks that exist at least once on the site.
     .count {
       display: inline-block;
-      font-size: 0.75rem;
-      margin-left: 0.5rem;
+      font-size: var(--bc-font-size-p-smaller);
+      margin-inline-start: 0.5rem;
 
       a {
-        color: $red;
+        color: var(--bc-red);
 
         &:focus,
         &:hover {

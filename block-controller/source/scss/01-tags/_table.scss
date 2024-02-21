@@ -1,14 +1,15 @@
 /**
- * Table
+ * Tags: Table
  */
 
 .block-controller-table {
+
   border-spacing: 0;
-  font-size: 0.9rem;
+  font-size: var(--bc-font-size-p);
   
   // Heading cells
   th {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid var(--bc-black);
     padding-block: 0.75rem;
     padding-inline: 0.1rem;
     text-align: left;
@@ -23,6 +24,7 @@
 
   // Zebra striping
   tbody tr:nth-child(2n) {
-    background-color: $gray;
+    background-color: var(--bc-gray);
   }
+
 }

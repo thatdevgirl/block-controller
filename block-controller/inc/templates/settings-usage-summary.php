@@ -17,9 +17,14 @@
 
 <div class="wrap">
   <p class="block-controller-paragraph">
-    A summary view of all blocks used throughout this site, including how many 
-    pages the block can be found on and how many instances of the block exist 
-    across all pages.
+    A summary view of all core and custom blocks used throughout this site, 
+    including how many pages the block can be found on and how many instances 
+    of the block exist across all pages.
+  </p>
+
+  <p class="block-controller-paragraph">
+    Click on a block ID to view details about that block's usage, including
+    a list of all pages and posts on which that block appears.
   </p>
 
   <?php $summary_table->display(); ?>

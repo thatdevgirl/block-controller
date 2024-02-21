@@ -13,14 +13,7 @@
 
 <div class="wrap">
   <p>
-    Use this page to enable and disable blocks for all post types. For the time 
-    being, only core blocks have the ability to be turned on or off in this
-    plugin.
-  </p>
-
-  <p>
-    While custom blocks are listed in the inventory pages, support for turning
-    custom blocks on and off will be coming in a future release.
+    Use this page to enable and disable core blocks for all post types. 
   </p>
 
   <form method="post" action="options.php" id="block-controller-settings">

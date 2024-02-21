@@ -1,5 +1,5 @@
 /**
- * Checkbox
+ * Tags: Checkbox
  *
  * Checkbox styles, used on the plugin settings pages.
  */
@@ -13,8 +13,9 @@
   @mixin base_checkbox {
     border: 0;
     border-radius: 0.5rem;
-    color: $white;
+    color: var(--bc-white);
     height: 1.75rem;
+    margin-inline-end: 0.75rem;
     width: 6rem;
 
     &:before {
@@ -24,9 +25,9 @@
     &:after {
       box-sizing: border-box;
       display: block;
-      font-size: 0.85rem;
+      font-size: var(--bc-font-size-p-smaller);
       height: 100%;
-      padding-top: 0.65rem;
+      padding-block-start: 0.65rem;
       width: 50%;
     }
   }
@@ -41,44 +42,46 @@
 
     // If a checkbox is not checked, then that block is enabled.
     &:not( :checked ) {
-      background-color: $green;
+      background-color: var(--bc-green);
 
       &::after {
-        border-right: 1px solid $white;
+        border-inline-end: 1px solid var(--bc-white);
         content: 'On';
-        padding: 0.9rem 0 0 0.5rem;
+        padding-block-start: 0.9rem;
+        padding-inline-start: 0.5rem;
         text-align: left;
       }
 
       &:hover,
       &:focus {
-        background-color: darken( $green, 10% );
+        background-color: var(--bc-green-darker);
       }
     }
 
     // If a checkbox is checked, then that block is disabled.
     &:checked,
     &[checked='checked'] {
-      background-color: $red;
+      background-color: var(--bc-red);
 
       &::after {
-        border-left: 1px solid $white;
+        border-inline-start: 1px solid var(--bc-white);
         content: 'Off';
         margin-left: 50%;
-        padding: 0.9rem 0.5rem 0 0;
+        padding-block-start: 0.9rem;
+        padding-inline-end: 0.5rem;
         text-align: right;
       }
 
       &:hover,
       &:focus {
-        background-color: darken( $red, 10% );
+        background-color: var(--bc-red-darker);
       }
     }
 
     // Special styling for disabled checkboxes.
     &:disabled {
-      background-color: $gray;
-      color: $black;
+      background-color: var(--bc-gray);
+      color: var(--bc-black);
       cursor: default;
 
       &::after {
@@ -87,7 +90,7 @@
 
       &:hover,
       &:focus {
-        background-color: $gray;
+        background-color: var(--bc-gray);
       }
     }
   }

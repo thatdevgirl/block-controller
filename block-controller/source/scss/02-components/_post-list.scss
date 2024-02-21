@@ -1,12 +1,16 @@
 /**
+ * Components: Post list.
+ *
  * The list of posts on the details page.
  */
 
 .block-controller-post-list {
+
   padding: 1rem;
 
   ul {
     list-style-type: disc;
-    margin-left: 2rem;
+    margin-inline-start: 2rem;
   }
+
 }

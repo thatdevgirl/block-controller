@@ -1,0 +1,30 @@
+/**
+ * Global: Color definitions.
+ *
+ * https://coolors.co/ac354b-169873-008ab8-d7d3d7-090c08
+ */
+
+$red:   #ac354b;
+$blue:  #008ab8;
+$green: #169873;
+
+:root,
+::before,
+::after {
+
+  // Primary colors.
+  --bc-red:         #{$red};
+  --bc-green:       #{$green};
+  --bc-blue:        #{$blue};
+
+  // Neutral colors.
+  --bc-black:       #090c08;
+  --bc-white:       #fff;
+  --bc-gray:        #d7d3d7;
+
+  // Shades.
+  --bc-red-darker:   #{darken( $red, 10% )};
+  --bc-green-darker: #{darken( $green, 10% )};
+  --bc-blue-darker:  #{darken( $blue, 10% )};
+  
+}

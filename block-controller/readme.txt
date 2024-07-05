@@ -4,7 +4,7 @@ Donate Link: https://www.buymeacoffee.com/thatdevgirl
 Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
-Tested up to: 6.5
+Tested up to: 6.6
 Stable tag: 1.4.2
 
 Allow site administrators to control editor access to content blocks.

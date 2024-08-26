@@ -5,13 +5,13 @@ Tags: content, blocks, gutenberg
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 6.6
-Stable tag: 1.4.2
+Stable tag: 2.0.0
 
 Allow site administrators to control editor access to content blocks.
 
 == Description ==
 
-This WordPress plugin provides site administrators with the ability to turn on and off specific post editor (Gutenberg) content blocks.
+Allow site administrators to turn off and on individual Gutenberg (post editor) blocks.
 
 == Installation ==
 
@@ -38,6 +38,9 @@ This WordPress plugin provides site administrators with the ability to turn on a
 4. The block usage details page for a single block. This page is similar to the details page for all blocks, but includes only the information for a single block.
 
 == Changelog ==
+
+= 2.0.0 =
+* Tested with WordPress 6.6.
 
 = 1.4.2 =
 * Tested with WordPress 6.5

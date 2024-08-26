@@ -1,6 +1,6 @@
 # Block Controller
 
-This WordPress plugin provides site administrators with the ability to turn on and off specific post editor (Gutenberg) content blocks.
+Allow site administrators to turn off and on individual Gutenberg (post editor) blocks.
 
 ## Usage instructions
 

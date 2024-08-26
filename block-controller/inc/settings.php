@@ -12,6 +12,11 @@ require_once( 'inventory.php' );
 
 class Settings {
 
+  public $inventory;
+  public $packages;
+  public $all_blocks;
+
+
   /**
    * WP admin menu icon.
    */

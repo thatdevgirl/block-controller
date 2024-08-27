@@ -9,9 +9,11 @@ Stable tag: 2.0.0
 
 Allow site administrators to control editor access to content blocks.
 
+
 == Description ==
 
 Allow site administrators to turn off and on individual Gutenberg (post editor) blocks.
+
 
 == Installation ==
 
@@ -27,6 +29,7 @@ Allow site administrators to turn off and on individual Gutenberg (post editor) 
 
 6. Go to the Usage Summary page (under `Block Controller -> Usage Summary`) to see a list of all blocks used across the site, as well as their associated posts.
 
+
 == Screenshots ==
 
 1. The main settings page, where site administrators can enable and disable blocks. This page highlights blocks that are already in use.
@@ -37,10 +40,12 @@ Allow site administrators to turn off and on individual Gutenberg (post editor) 
 
 4. The block usage details page for a single block. This page is similar to the details page for all blocks, but includes only the information for a single block.
 
+
 == Changelog ==
 
 = 2.0.0 =
 * Tested with WordPress 6.6.
+* [Bug fix] Fixed PHP dynamic property deprecation warnings.
 
 = 1.4.2 =
 * Tested with WordPress 6.5
